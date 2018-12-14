@@ -7,13 +7,32 @@
         mc:Ignorable="d"
         Icon="../images/favicon.ico"
         Title="LoginWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel VerticalAlignment="Center">
         <TextBlock
-            FontSize="50"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            FontSize="40" Margin="0 0 0 40"
         >
-            hello world
+            大学生宿舍管理系统
         </TextBlock>
-    </Grid>
+        
+        <DockPanel Width="300">
+            <Label FontSize="20">用户名：</Label>
+            <TextBox Height="30" Width="200" FontSize="20"></TextBox>
+        </DockPanel>
+
+        <DockPanel Width="300" Margin="0 20 0 0">
+            <Label Margin="12 0 0 0" FontSize="20">密码：</Label>
+            <TextBox Height="30" Width="200" FontSize="20"></TextBox>
+        </DockPanel>
+
+        <DockPanel
+            Width="300"
+            HorizontalAlignment="Center"
+            Margin="40 30 0 0"
+        >
+            <Button Width="110" Height="35">注册</Button>
+            <Button Width="110" Height="35">登录</Button>
+        </DockPanel>
+    </StackPanel>
 </Window>
