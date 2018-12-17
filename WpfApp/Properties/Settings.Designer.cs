@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApp.Properties
+namespace 大作业.Properties
 {
 
 

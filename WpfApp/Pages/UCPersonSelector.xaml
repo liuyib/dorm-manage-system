@@ -1,0 +1,36 @@
+﻿<UserControl 
+  x:Class="大作业.UCPersonSelector"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <UserControl.Resources>
+        <DataTemplate x:Key="personListItemTemplate">
+            <StackPanel Margin="4,8" Orientation="Horizontal">
+                <Image Height="20" Width="20" Margin="0,0,4,0" Source="../Resources/icoFiles/person.ico" VerticalAlignment="Center" />
+                <TextBlock Margin="0"
+                           Foreground="{StaticResource BaseColor02}"
+                           Text="{Binding XPath=Name}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Border CornerRadius="10" Background="{StaticResource BaseColor04}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+                <Image Margin="4,4,0,4" Source="/Resources/icoFiles/persons.ico"/>
+                <TextBlock  FontSize="20" Foreground="White"
+                                Padding="8" Text="所有职员"
+                                VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <ListBox Grid.Row="1" MinHeight="20"
+                     Background="{StaticResource BaseColor04}"
+                     ItemsSource="{Binding}"
+                     ItemTemplate="{DynamicResource personListItemTemplate}"
+                     IsSynchronizedWithCurrentItem="True"/>
+        </Grid>
+    </Border>
+</UserControl>

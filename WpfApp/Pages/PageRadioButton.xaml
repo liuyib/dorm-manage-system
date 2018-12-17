@@ -1,0 +1,57 @@
+﻿<Page x:Class="大作业.Pages.PageRadioButton"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:大作业.Pages"
+      xmlns:z="wpfz"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="750"
+      Title="RadioButtonPage">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20">
+            <RadioButton Margin="5">aaa</RadioButton>
+            <RadioButton Margin="5">bbb</RadioButton>
+            <RadioButton Margin="5">ccc</RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20">
+            <RadioButton Style="{StaticResource RadioButtonBoxStyle}" Margin="1">近3天</RadioButton>
+            <RadioButton Style="{StaticResource RadioButtonBoxStyle}" Margin="1">近7天</RadioButton>
+            <RadioButton Style="{StaticResource RadioButtonBoxStyle}" Margin="1">本月</RadioButton>
+            <RadioButton Style="{StaticResource RadioButtonBoxStyle}" Margin="1">自定义</RadioButton>
+            <RadioButton Style="{StaticResource RadioButtonBoxStyle}" Margin="1">2012.05.12-2015.12.14</RadioButton>
+        </StackPanel>
+        <StackPanel Height="Auto" Orientation="Horizontal">
+            <RadioButton Margin="3" z:Attach.IconzSize="18">男</RadioButton>
+            <RadioButton Margin="3" z:Attach.IconzSize="20">女</RadioButton>
+            <RadioButton Margin="3" IsChecked="{x:Null}" z:Attach.IconzSize="22">其他</RadioButton>
+            <RadioButton Margin="3" IsChecked="{x:Null}" z:Attach.IconzSize="24">女</RadioButton>
+            <RadioButton Margin="3" IsChecked="{x:Null}" z:Attach.IconzSize="26">女</RadioButton>
+            <RadioButton Margin="3" IsEnabled="False">我被禁用了</RadioButton>
+            <RadioButton Margin="3" IsEnabled="False" IsChecked="{x:Null}">我被禁用了</RadioButton>
+            <RadioButton Margin="3" IsChecked="True" z:Attach.AllowsAnimation="{Binding IsChecked,RelativeSource={RelativeSource Self}}">我会转的</RadioButton>
+            <TextBlock Text="&#xe05b;"
+                       Style="{StaticResource IconzStyle}"
+                       FontSize="18"/>
+            <TextBlock Text="&#xe05b;"
+                       Style="{StaticResource IconzStyle}"
+                       FontSize="20"/>
+            <TextBlock Text="&#xe05b;"
+                       Style="{StaticResource IconzStyle}"
+                 FontSize="22"/>
+            <TextBlock  Text="&#xe05b;"
+                       Style="{StaticResource IconzStyle}"
+                       FontSize="24"/>
+            <TextBlock  Text="&#xe05b;"
+                       Style="{StaticResource IconzStyle}"
+                        FontSize="26"/>
+            <TextBlock  Text="&#xe05b;"
+                       Style="{StaticResource IconzStyle}"
+                        FontSize="36"/>
+            <TextBlock  Text="&#xe05b;" 
+                       Style="{StaticResource IconzStyle}"
+                        FontSize="54"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
