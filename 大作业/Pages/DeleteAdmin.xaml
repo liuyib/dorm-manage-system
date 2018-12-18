@@ -32,11 +32,8 @@
 
         </DataGrid>
 
-
-        <Rectangle Fill="Yellow" Height="3" Margin="0 20"></Rectangle>
+        <Rectangle Fill="AntiqueWhite" Height="3" Margin="0 20"></Rectangle>
         <TextBox Text="{Binding ElementName=dataGrid,Path=SelectedItem.account}" Name="accountBox"/>
-
-
 
     </StackPanel>
 </Page>
