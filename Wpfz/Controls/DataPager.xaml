@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Wpfz.DataPager"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:loc="clr-namespace:Wpfz"
+             x:Name="dp" Margin="3"
+             mc:Ignorable="d" 
+             d:DesignHeight="46" d:DesignWidth="577" Loaded="DataPager_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Wpfz;component/Themes/Generic.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <!--<Grid.Resources>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Margin" Value="3,0,3,0" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Style>
+        </Grid.Resources>-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="50" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Column="0"  VerticalAlignment="Center" Name="cboPageSize"
+                  MinWidth="40" Margin="5,8,0,8"
+                  ItemsSource="{Binding Path=PageSizeItems,ElementName=dp}" 
+                  SelectedItem="{Binding PageSize,Mode=TwoWay,ElementName=dp}" SelectionChanged="CbpPageSize_SelectionChanged" Width="Auto" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="5,10,0,10" Height="26">
+
+            <loc:ImageButton Click="BtnFirst_Click" x:Name="btnFirst"
+                ImageSource="/Wpfz;component/Themes/Generic/Images/pagination_first.gif" 
+                GrayImageSource="/Wpfz;component/Themes/Generic/Images/pagination_first_gray.gif" />
+            <loc:ImageButton Click="BtnPrev_Click" x:Name="btnPrev"
+                ImageSource="/Wpfz;component/Themes/Generic/Images/pagination_prev.gif" 
+                GrayImageSource="/Wpfz;component/Themes/Generic/Images/pagination_prev_gray.gif" />
+
+            <TextBlock Text="Page "  VerticalAlignment="Center"/>
+            <TextBox Width="30" Text="{Binding Path=PageIndex,ElementName=dp}" Name="tbPageIndex" PreviewKeyDown="TbPageIndex_PreviewKeyDown" LostFocus="TbPageIndex_LostFocus" />
+            <TextBlock Text=" of "  VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Path=PageCount, ElementName=dp}"  VerticalAlignment="Center"/>
+
+            <loc:ImageButton Click="BtnNext_Click" x:Name="btnNext"
+                ImageSource="/Wpfz;component/Themes/Generic/Images/pagination_next.gif" 
+                GrayImageSource="/Wpfz;component/Themes/Generic/Images/pagination_next_gray.gif" />
+            <loc:ImageButton Click="BtnLast_Click" x:Name="btnLast"
+                ImageSource="/Wpfz;component/Themes/Generic/Images/pagination_last.gif" 
+                GrayImageSource="/Wpfz;component/Themes/Generic/Images/pagination_last_gray.gif" />
+            <loc:ImageButton Click="BtnRefresh_Click"
+                ImageSource="/Wpfz;component/Themes/Generic/Images/pagination_load.png" />
+        </StackPanel>
+        <TextBlock Grid.Column="2" VerticalAlignment="Center" Margin="5,14" Height="18" >
+            当前显示第 <TextBlock Text="{Binding Path=Start,ElementName=dp}" /> 到第 <TextBlock Text="{Binding Path=End,ElementName=dp}" /> 数据，共 <TextBlock Text="{Binding Path=Total,ElementName=dp}" /> 条数据。
+        </TextBlock>
+    </Grid>
+</UserControl>

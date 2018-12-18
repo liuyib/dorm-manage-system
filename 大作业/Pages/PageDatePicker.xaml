@@ -1,0 +1,50 @@
+﻿<Page x:Class="大作业.Pages.PageDatePicker"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:大作业.Pages"
+      xmlns:z="wpfz"
+      xmlns:system="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600"
+      Title="PageDatePicker">
+
+    <StackPanel Style="{x:Null}">
+        <StackPanel.Resources>
+            <Style TargetType="StackPanel">
+                <Setter Property="Height" Value="80"/>
+                <Setter Property="Margin" Value="3"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+            </Style>
+        </StackPanel.Resources>
+
+        <StackPanel Height="50" Orientation="Horizontal">
+            <DatePicker Margin="3" SelectedDate="{x:Static system:DateTime.Today}"/>
+            <DatePicker Margin="3" IsEnabled="False" SelectedDate="{x:Static system:DateTime.Today}"/>
+        </StackPanel>
+
+        <StackPanel Height="50" Orientation="Horizontal">
+            <DatePicker Style="{StaticResource DatePickerDateTimeStyle}" Margin="3" SelectedDate="{x:Static system:DateTime.Today}"/>
+            <DatePicker Style="{StaticResource DatePickerDateTimeStyle}" Margin="3" IsEnabled="False" SelectedDate="{x:Static system:DateTime.Today}"/>
+        </StackPanel>
+
+        <StackPanel Height="50" Orientation="Horizontal">
+            <DatePicker Margin="3" Style="{StaticResource DatePickerLabelStyle}"
+                        z:Attach.Label="出生日期："
+                        SelectedDate="{x:Static system:DateTime.Today}"/>
+            <DatePicker Margin="3" Style="{StaticResource DatePickerLabelStyle}"
+                        z:Attach.Label="禁用日期：" IsEnabled="False"
+                        SelectedDate="{x:Static system:DateTime.Today}"/>
+        </StackPanel>
+
+        <StackPanel Height="50" Orientation="Horizontal">
+            <DatePicker Margin="3" Style="{StaticResource DatePickerDateTimeLabelStyle}"
+                        z:Attach.Label="开始时间："
+                        SelectedDate="{x:Static system:DateTime.Today}"/>
+            <DatePicker Margin="3" Style="{StaticResource DatePickerDateTimeLabelStyle}"
+                        z:Attach.Label="禁用时间：" IsEnabled="False"
+                        SelectedDate="{x:Static system:DateTime.Today}"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

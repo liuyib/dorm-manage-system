@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    >
+    <FontFamily x:Key="FontFamily_Key" >Microsoft YaHei</FontFamily>
+    <sys:Double x:Key="FontSize_Key">11</sys:Double>
+    <sys:Double x:Key="DisableOpacity_Key">0.5</sys:Double>
+    <sys:Double x:Key="ReadonlyOpacity_Key">0.6</sys:Double>
+    <sys:Double x:Key="WatermarkOpacity_Key">0.4</sys:Double>
+    <sys:String x:Key="DateFormat_Key">yyyy-MM-dd</sys:String>
+    <sys:String x:Key="DateTimeFormat_Key">yyyy-MM-dd HH:mm:ss</sys:String>
+
+    <!--ItemsControl:DataGrid,Tree-->
+    <sys:Double x:Key="HeaderFontSize_Key">14</sys:Double>
+
+    <!--Window窗口-->
+    <SolidColorBrush x:Key="WindowForeground_Colors" Color="Black"/>
+    <SolidColorBrush x:Key="WindowBackground_Colors" Color="#FFF1FAD2"/>
+    <SolidColorBrush x:Key="WindowInnerBackground_Colors" Color="Transparent"/>
+    <SolidColorBrush x:Key="WindowBorderBrush_Colors" Color="#FF4CAA0A"/>
+    <DropShadowEffect x:Key="WindowDropShadow_Colors" Color="#F472F4"
+                      BlurRadius="8" ShadowDepth="0" Direction="0" Opacity="0.7" />
+    <SolidColorBrush x:Key="CaptionBarForeground_Colors" Color="White"/>
+    <LinearGradientBrush x:Key="CaptionBarBackground_Colors" StartPoint="0,0" EndPoint="0,1" MappingMode="RelativeToBoundingBox">
+        <GradientStop Color = "#8FADCE" Offset="0" />
+        <GradientStop Color = "#BDD3EF" Offset="1" />
+    </LinearGradientBrush>
+
+    <!--MessageBoxz(在代码隐藏类中引用了这4个颜色)-->
+    <SolidColorBrush x:Key="InfoForeground_Colors" Color="Black"/>
+    <SolidColorBrush x:Key="QuestionForeground_Colors" Color="#74B80C"/>
+    <SolidColorBrush x:Key="WarningForeground_Colors" Color="DarkOrange"/>
+    <SolidColorBrush x:Key="ErrorForeground_Colors" Color="#E74E4E"/>
+
+    <!--WaitingBox-->
+    <SolidColorBrush x:Key="WaitingBoxBackground_Colors" Color="#921692"/>
+
+    <!--边框：Menu-->
+    <DropShadowEffect x:Key="DefaultDropShadow_Colors" Color="Black"
+                      BlurRadius="5" ShadowDepth="2" Direction="315"
+                      Opacity="0.6" />
+
+    <!--输入组件-->
+    <SolidColorBrush x:Key="TextForeground_Colors" Color="Black"/>
+    <SolidColorBrush x:Key="TextBackground_Colors" Color="White"/>
+    <SolidColorBrush x:Key="TextSelectionBrush_Colors" Color="#FF9C9696"/>
+
+    <!--TextBox左侧的Label默认背景色-->
+    <SolidColorBrush x:Key="TextLabelBackground_Colors" Color="#FFC2FDEA"/>
+
+    <!--输入框-->
+    <SolidColorBrush x:Key="ControlBorderBrush_Colors" Color="#999C9F"/>
+    <SolidColorBrush x:Key="MouseOverBorderBrush_Colors" Color="#F6D1D1"/>
+    <SolidColorBrush x:Key="FocusBackground_Colors" Color="#365080"/>
+    <SolidColorBrush x:Key="FocusBorderBrush_Colors" Color="#EBCECE"/>
+
+    <!--ScrollBar-->
+    <SolidColorBrush x:Key="ScrollBarForeround_Colors" Color="#877F7F"/>
+    <SolidColorBrush x:Key="ScrollBarBackground_Colors" Color="#3E3E42"/>
+
+    <!--ItemsControl:DataGrid,Tree-->
+    <SolidColorBrush x:Key="HeaderBorderBrush_Colors" Color="#A6FFA500"/>
+    <SolidColorBrush x:Key="HeaderBackground_Colors" Color="Beige"/>
+    <SolidColorBrush x:Key="ItemsContentBackground_Colors" Color="White"/>
+    <SolidColorBrush x:Key="ItemsAlternationContentBackground_Colors" Color="LightCyan"/>
+    <SolidColorBrush x:Key="GridLinesBrush_Colors" Color="#A6D0C2A7"/>
+    <SolidColorBrush x:Key="ItemSelectedForeground_Colors" Color="White"/>
+    <SolidColorBrush x:Key="ItemSelectedBackground_Colors" Color="LightGray"/>
+    <SolidColorBrush x:Key="ItemMouseOverBackground_Colors" Color="#BA7DF4"/>
+    <SolidColorBrush x:Key="ItemMouseOverForeground_Colors" Color="White"/>
+
+    <!--高亮：日历Today-->
+    <SolidColorBrush x:Key="ItemHighlighteBackground_Colors" Color="Blue"/>
+    <SolidColorBrush x:Key="ItemHighlighteForeground_Colors" Color="White"/>
+
+    <!--普通按钮（透明背景）：CheckBox、RadioButton、FButton、……-->
+    <SolidColorBrush x:Key="CheckedForeground_Colors" Color="#F7B63E"/>
+    <SolidColorBrush x:Key="MouseOverForeground_Colors" Color="Orange"/>
+    <SolidColorBrush x:Key="PressedForeground_Colors" Color="DarkOrange"/>
+    <SolidColorBrush x:Key="LinkForeground_Colors" Color="#0816BB"/>
+
+    <!--Popup，ComboBox，Calendar，Popup（无）-->
+    <SolidColorBrush x:Key="PopupBackground_Colors" Color="Beige"/>
+    <!-- Popup Border -->
+    <SolidColorBrush x:Key="PopupDarkBorder_Colors" Color="#FFABADB3" />
+
+
+    <!--Buttonz-->
+    <SolidColorBrush x:Key="ButtonBorder_Colors" Color="#FF707070" />
+    <SolidColorBrush x:Key="ButtonBackground_Colors" Color="Beige"/>
+    <SolidColorBrush x:Key="ButtonForeground_Colors" Color="Black"/>
+    <SolidColorBrush x:Key="ButtonMouseOverBackground_Colors" Color="Orange"/>
+    <SolidColorBrush x:Key="ButtonMouseOverForeground_Colors" Color="White"/>
+    <SolidColorBrush x:Key="ButtonPressedBackground_Colors" Color="DarkOrange"/>
+    <SolidColorBrush x:Key="ButtonPressedForeground_Colors" Color="White"/>
+
+    <!-- Control -->
+    <SolidColorBrush x:Key="ControlNormalBackground_ColorsKey" Color="#FFFFFFFF" />
+    <SolidColorBrush x:Key="ControlDisabledBackground_ColorsKey" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="ControlNormalBorder_ColorsKey" Color="#FFABADB3" />
+    <SolidColorBrush x:Key="ControlMouseOverBorder_ColorsKey" Color="#FF7EB4EA" />
+    <SolidColorBrush x:Key="ControlFocusedBorder_ColorsKey" Color="Red" />
+    <SolidColorBrush x:Key="ControlSelectedBorder_ColorsKey" Color="#FF569DE5" />
+
+    <!--Menu-->
+    <SolidColorBrush x:Key="MenuForeground_Colors" Color="#920892"/>
+    <SolidColorBrush x:Key="MenuBackground_Colors" Color="#DDD1D1"/>
+    <SolidColorBrush x:Key="MenuBorderBrush_Colors" Color="DarkBlue"/>
+    <SolidColorBrush x:Key="MenuMouseOverBackground_Colors" Color="#0D3CD2"/>
+    <SolidColorBrush x:Key="MenuMouseOverForeground_Colors" Color="White"/>
+    <SolidColorBrush x:Key="MenuPressedBackground_Colors" Color="#082CA0"/>
+    <SolidColorBrush x:Key="MenuPressedForeground_Colors" Color="White"/>
+
+    <!--State brush，这两个定义都未被引用过-->
+    <SolidColorBrush x:Key="SuccessBrush_Colors" Color="#16B32A"/>
+    <SolidColorBrush x:Key="FailBrush_Colors" Color="#B92222"/>
+
+</ResourceDictionary>

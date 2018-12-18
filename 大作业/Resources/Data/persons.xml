@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Persons>
+  <Person>
+    <Name>大卫格雷斯</Name>
+    <Photo>/Resources/Pictures/david_greene.jpg</Photo>
+    <Office>
+      <OfficeName>美国Insurance公司</OfficeName>
+      <StreetAddress>某某街561号</StreetAddress>
+      <City>城市一</City>
+      <State>XX州</State>
+      <ZipCode>123456</ZipCode>
+    </Office>
+  </Person>
+  <Person>
+    <Name>美女职员一</Name>
+    <Photo>/Resources/Pictures/samantha_ableton.jpg</Photo>
+    <Office>
+      <OfficeName>美国XXXX公司</OfficeName>
+      <StreetAddress>某某街99号</StreetAddress>
+      <City>城市二</City>
+      <State>XX州</State>
+      <ZipCode>234567</ZipCode>
+    </Office>
+  </Person>
+  <Person>
+    <Name>美女职员二</Name>
+    <Photo>/Resources/Pictures/gina_kingsley.jpg</Photo>
+    <Office>
+      <OfficeName>美国XXXX公司</OfficeName>
+      <StreetAddress>某某街98号</StreetAddress>
+      <City>城市三</City>
+      <State>XX州</State>
+      <ZipCode>345678</ZipCode>
+    </Office>
+  </Person>
+</Persons>

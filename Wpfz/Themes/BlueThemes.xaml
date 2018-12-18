@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Wpfz">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Wpfz;component/Themes/Blue/BlueColors.xaml"/>
+        <ResourceDictionary Source="/Wpfz;component/Themes/Styles.xaml"/>
+        <ResourceDictionary Source="/Wpfz;component/Themes/Blue/DockBlueTheme.xaml"/>
+        <ResourceDictionary Source="/Wpfz;component/Themes/Generic/BaseColors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

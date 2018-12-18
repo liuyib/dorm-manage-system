@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5059069-F93C-4B12-A77E-3D7368E6F819}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>Wpfz</RootNamespace>
+    <AssemblyName>Wpfz</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Themes\Generic\DockAeroBrushes.cs" />
+    <Page Include="Controls\DataPager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ImageButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Imagez.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MessageBoxz.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WaitingBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\AeroThemes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Aero\AeroColors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Aero\DockAeroBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Aero\DockAeroTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BlueThemes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Blue\BlueColors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Blue\DockBlueBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Blue\DockBlueTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Controls\AnimatedGif\AnimationCache.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifApplicationExtension.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifBlock.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifBlockKind.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifColor.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifCommentExtension.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifDecoderException.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifExtension.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifFile.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifFrame.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifGraphicControlExtension.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifHeader.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifHelpers.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifImageData.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifImageDescriptor.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifLogicalScreenDescriptor.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifPlainTextExtension.cs" />
+    <Compile Include="Controls\AnimatedGif\Decoding\GifTrailer.cs" />
+    <Compile Include="Controls\AnimatedGif\GifAttach.cs" />
+    <Compile Include="Controls\AnimatedGif\ImageAnimationController.cs" />
+    <Compile Include="Controls\BulletCheckBox.cs" />
+    <Compile Include="Controls\BusyBox.cs" />
+    <Compile Include="Controls\Buttonz.cs" />
+    <Compile Include="Controls\ComboBoxMulti.cs" />
+    <Compile Include="Controls\DataPager.xaml.cs">
+      <DependentUpon>DataPager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DateTimePicker.cs" />
+    <Compile Include="Controls\HighTextBlock.cs" />
+    <Compile Include="Controls\ImageButton.xaml.cs">
+      <DependentUpon>ImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Imagez.xaml.cs">
+      <DependentUpon>Imagez.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageBoxz.xaml.cs">
+      <DependentUpon>MessageBoxz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressRing.cs" />
+    <Compile Include="Controls\VirtualizingWrapPanel.cs" />
+    <Compile Include="Controls\WaitingBox.xaml.cs">
+      <DependentUpon>WaitingBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Windowz.cs" />
+    <Compile Include="Converters\custom\BackgroundToForegroundConverter.cs" />
+    <Compile Include="Converters\custom\PercentToAngleConverter.cs" />
+    <Compile Include="Converters\custom\ThicknessToDoubleConverter.cs" />
+    <Compile Include="Converters\custom\TreeViewMarginConverter.cs" />
+    <Compile Include="Converters\custom\TrueToFalseConverter.cs" />
+    <Compile Include="Converters\custom\UriSourceToBitmapImageConverter.cs" />
+    <Compile Include="Converters\MyConverter.cs" />
+    <Compile Include="Core\Attach.cs" />
+    <Compile Include="Core\Common\BaseNotifyPropertyChanged.cs" />
+    <Compile Include="Core\Common\ConsoleAsynNotify.cs" />
+    <Compile Include="Core\Common\DefaultAsynNotify.cs" />
+    <Compile Include="Core\Common\Exceptions.cs" />
+    <Compile Include="Core\Common\FileAsynNotify.cs" />
+    <Compile Include="Core\Common\IAsynNotify.cs" />
+    <Compile Include="Core\ControlExtession.cs" />
+    <Compile Include="Core\ControlHelper.cs" />
+    <Compile Include="Core\FExtension.cs" />
+    <Compile Include="Core\ImageButtonChrome.cs" />
+    <Compile Include="Core\Messenger.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="CustomControl1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Themes\GenericThemes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic\BaseColors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic\DockAeroBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic\DockAeroTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic\GenericColors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Docking\Controls\AnchorablePaneControlOverlayArea.cs" />
+    <Compile Include="Docking\Controls\AnchorablePaneDropTarget.cs" />
+    <Compile Include="Docking\Controls\AnchorablePaneTabPanel.cs" />
+    <Compile Include="Docking\Controls\AnchorablePaneTitle.cs" />
+    <Compile Include="Docking\Controls\AutoHideWindowManager.cs" />
+    <Compile Include="Docking\Controls\BindingHelper.cs" />
+    <Compile Include="Docking\Controls\ContextMenuEx.cs" />
+    <Compile Include="Docking\Controls\DockingManagerDropTarget.cs" />
+    <Compile Include="Docking\Controls\DockingManagerOverlayArea.cs" />
+    <Compile Include="Docking\Controls\DocumentPaneControlOverlayArea.cs" />
+    <Compile Include="Docking\Controls\DocumentPaneDropAsAnchorableTarget.cs" />
+    <Compile Include="Docking\Controls\DocumentPaneDropTarget.cs" />
+    <Compile Include="Docking\Controls\DocumentPaneGroupDropTarget.cs" />
+    <Compile Include="Docking\Controls\DocumentPaneTabPanel.cs" />
+    <Compile Include="Docking\Controls\DragService.cs" />
+    <Compile Include="Docking\Controls\DropArea.cs" />
+    <Compile Include="Docking\Controls\DropDownButton.cs" />
+    <Compile Include="Docking\Controls\DropDownControlArea.cs" />
+    <Compile Include="Docking\Controls\DropTarget.cs" />
+    <Compile Include="Docking\Controls\DropTargetType.cs" />
+    <Compile Include="Docking\Controls\Extentions.cs" />
+    <Compile Include="Docking\Controls\FocusElementManager.cs" />
+    <Compile Include="Docking\Controls\IDropTarget.cs" />
+    <Compile Include="Docking\Controls\IOverlayWindow.cs" />
+    <Compile Include="Docking\Controls\IOverlayWindowArea.cs" />
+    <Compile Include="Docking\Controls\IOverlayWindowHost.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorableControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorableFloatingWindowControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorableItem.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorablePaneControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorablePaneGroupControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorableTabItem.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorGroupControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAnchorSideControl.cs" />
+    <Compile Include="Docking\Controls\LayoutAutoHideWindowControl.cs" />
+    <Compile Include="Docking\Controls\LayoutDocumentControl.cs" />
+    <Compile Include="Docking\Controls\LayoutDocumentFloatingWindowControl.cs" />
+    <Compile Include="Docking\Controls\LayoutDocumentItem.cs" />
+    <Compile Include="Docking\Controls\LayoutDocumentPaneControl.cs" />
+    <Compile Include="Docking\Controls\LayoutDocumentPaneGroupControl.cs" />
+    <Compile Include="Docking\Controls\LayoutDocumentTabItem.cs" />
+    <Compile Include="Docking\Controls\LayoutFloatingWindowControl.cs" />
+    <Compile Include="Docking\Controls\LayoutGridControl.cs" />
+    <Compile Include="Docking\Controls\LayoutGridResizerControl.cs" />
+    <Compile Include="Docking\Controls\LayoutItem.cs" />
+    <Compile Include="Docking\Controls\LayoutPanelControl.cs" />
+    <Compile Include="Docking\Controls\NavigatorWindow.cs" />
+    <Compile Include="Docking\Controls\OverlayArea.cs" />
+    <Compile Include="Docking\Controls\OverlayWindow.cs" />
+    <Compile Include="Docking\Controls\OverlayWindowDropTarget.cs" />
+    <Compile Include="Docking\Controls\ReentrantFlag.cs" />
+    <Compile Include="Docking\Controls\SplineBorder.cs" />
+    <Compile Include="Docking\Controls\TransformExtentions.cs" />
+    <Compile Include="Docking\Converters\ActivateCommandLayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="Docking\Converters\AnchorSideToAngleConverter.cs" />
+    <Compile Include="Docking\Converters\AnchorSideToOrientationConverter.cs" />
+    <Compile Include="Docking\Converters\AutoHideCommandLayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="Docking\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Docking\Converters\HideCommandLayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="Docking\Converters\InverseBoolToVisibilityConverter.cs" />
+    <Compile Include="Docking\Converters\LayoutItemFromLayoutModelConverter.cs" />
+    <Compile Include="Docking\Converters\NullToDoNothingConverter.cs" />
+    <Compile Include="Docking\Converters\UriSourceToBitmapImageConverter.cs" />
+    <Compile Include="Docking\Core\DockingManager.cs" />
+    <Compile Include="Docking\Core\Extentions.cs" />
+    <Compile Include="Docking\Core\LayoutEventArgs.cs" />
+    <Compile Include="Docking\Core\MathHelper.cs" />
+    <Compile Include="Docking\Core\Win32Helper.cs" />
+    <Compile Include="Docking\Core\WindowHelper.cs" />
+    <Compile Include="Docking\Layout\AnchorableShowStrategy.cs" />
+    <Compile Include="Docking\Layout\AnchorSide.cs" />
+    <Compile Include="Docking\Layout\ChildrenTreeChangedEventArgs.cs" />
+    <Compile Include="Docking\Layout\Extentions.cs" />
+    <Compile Include="Docking\Layout\ILayoutAnchorablePane.cs" />
+    <Compile Include="Docking\Layout\ILayoutContainer.cs" />
+    <Compile Include="Docking\Layout\ILayoutContentSelector.cs" />
+    <Compile Include="Docking\Layout\ILayoutControl.cs" />
+    <Compile Include="Docking\Layout\ILayoutDocumentPane.cs" />
+    <Compile Include="Docking\Layout\ILayoutElement.cs" />
+    <Compile Include="Docking\Layout\ILayoutElementWithVisibility.cs" />
+    <Compile Include="Docking\Layout\ILayoutGroup.cs" />
+    <Compile Include="Docking\Layout\ILayoutOrientableElement.cs" />
+    <Compile Include="Docking\Layout\ILayoutPane.cs" />
+    <Compile Include="Docking\Layout\ILayoutPanelElement.cs" />
+    <Compile Include="Docking\Layout\ILayoutPaneSerializable.cs" />
+    <Compile Include="Docking\Layout\ILayoutPositionableElement.cs" />
+    <Compile Include="Docking\Layout\ILayoutPreviousContainer.cs" />
+    <Compile Include="Docking\Layout\ILayoutRoot.cs" />
+    <Compile Include="Docking\Layout\ILayoutUpdateStrategy.cs" />
+    <Compile Include="Docking\Layout\LayoutAnchorable.cs" />
+    <Compile Include="Docking\Layout\LayoutAnchorableFloatingWindow.cs" />
+    <Compile Include="Docking\Layout\LayoutAnchorablePane.cs" />
+    <Compile Include="Docking\Layout\LayoutAnchorablePaneGroup.cs" />
+    <Compile Include="Docking\Layout\LayoutAnchorGroup.cs" />
+    <Compile Include="Docking\Layout\LayoutAnchorSide.cs" />
+    <Compile Include="Docking\Layout\LayoutContent.cs" />
+    <Compile Include="Docking\Layout\LayoutDocument.cs" />
+    <Compile Include="Docking\Layout\LayoutDocumentFloatingWindow.cs" />
+    <Compile Include="Docking\Layout\LayoutDocumentPane.cs" />
+    <Compile Include="Docking\Layout\LayoutDocumentPaneGroup.cs" />
+    <Compile Include="Docking\Layout\LayoutElement.cs" />
+    <Compile Include="Docking\Layout\LayoutElementEventArgs.cs" />
+    <Compile Include="Docking\Layout\LayoutFloatingWindow.cs" />
+    <Compile Include="Docking\Layout\LayoutGroup.cs" />
+    <Compile Include="Docking\Layout\LayoutGroupBase.cs" />
+    <Compile Include="Docking\Layout\LayoutPanel.cs" />
+    <Compile Include="Docking\Layout\LayoutPositionableGroup.cs" />
+    <Compile Include="Docking\Layout\LayoutRoot.cs" />
+    <Compile Include="Docking\Layout\Serialization\LayoutSerializationCallbackEventArgs.cs" />
+    <Compile Include="Docking\Layout\Serialization\LayoutSerializer.cs" />
+    <Compile Include="Docking\Layout\Serialization\XmlLayoutSerializer.cs" />
+    <Compile Include="Docking\Themes\DictionaryTheme.cs" />
+    <Compile Include="Docking\Themes\Theme.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\FIcon.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\DockBottom.PNG" />
+    <Resource Include="Themes\Generic\Images\DockLeft.PNG" />
+    <Resource Include="Themes\Generic\Images\DockPane.PNG" />
+    <Resource Include="Themes\Generic\Images\DockPaneEmpty.png" />
+    <Resource Include="Themes\Generic\Images\DockRight.PNG" />
+    <Resource Include="Themes\Generic\Images\DockTop.PNG" />
+    <Resource Include="Themes\Generic\Images\HTabGroup.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockDocPaneBottom.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockDocPaneLeft.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockDocPaneRight.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockDocPaneTop.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockPaneBottom.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockPaneInside.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockPaneLeft.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockPaneRight.png" />
+    <Resource Include="Themes\Generic\Images\InnerDockPaneTop.png" />
+    <Resource Include="Themes\Generic\Images\Locked.png" />
+    <Resource Include="Themes\Generic\Images\pagination_first.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_first_gray.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_last.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_last_gray.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_load.png" />
+    <Resource Include="Themes\Generic\Images\pagination_loading.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_next.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_next_gray.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_prev.gif" />
+    <Resource Include="Themes\Generic\Images\pagination_prev_gray.gif" />
+    <Resource Include="Themes\Generic\Images\PinAutoHide.png" />
+    <Resource Include="Themes\Generic\Images\PinClose.png" />
+    <Resource Include="Themes\Generic\Images\PinDocMenu.png" />
+    <Resource Include="Themes\Generic\Images\PinMaximize.png" />
+    <Resource Include="Themes\Generic\Images\PinMenu.png" />
+    <Resource Include="Themes\Generic\Images\PinRestore.png" />
+    <Resource Include="Themes\Generic\Images\VTabGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Aero\Images\DockAnchorableBottom.png" />
+    <Resource Include="Themes\Aero\Images\DockAnchorableLeft.png" />
+    <Resource Include="Themes\Aero\Images\DockAnchorableRight.png" />
+    <Resource Include="Themes\Aero\Images\DockAnchorableTop.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentAsAnchorableBottom.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentAsAnchorableLeft.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentAsAnchorableRight.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentAsAnchorableTop.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentBottom.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentInside.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentLeft.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentRight.png" />
+    <Resource Include="Themes\Aero\Images\DockDocumentTop.png" />
+    <Resource Include="Themes\Aero\Images\DockPaneEmpty.png" />
+    <Resource Include="Themes\Aero\Images\DockPaneLargeEmpty.png" />
+    <Resource Include="Themes\Aero\Images\HTabGroup.png" />
+    <Resource Include="Themes\Aero\Images\Locked.png" />
+    <Resource Include="Themes\Aero\Images\PinAutoHide.png" />
+    <Resource Include="Themes\Aero\Images\PinAutoHide_Black.png" />
+    <Resource Include="Themes\Aero\Images\PinAutoHide_Dark.png" />
+    <Resource Include="Themes\Aero\Images\PinClose.png" />
+    <Resource Include="Themes\Aero\Images\PinClose_Black.png" />
+    <Resource Include="Themes\Aero\Images\PinClose_Dark.png" />
+    <Resource Include="Themes\Aero\Images\PinDocMenu.png" />
+    <Resource Include="Themes\Aero\Images\PinDocMenu_Black.png" />
+    <Resource Include="Themes\Aero\Images\PinDocMenu_Dark.png" />
+    <Resource Include="Themes\Aero\Images\PinMaximize.png" />
+    <Resource Include="Themes\Aero\Images\PinMaximize_Black.png" />
+    <Resource Include="Themes\Aero\Images\PinMaximize_Dark.png" />
+    <Resource Include="Themes\Aero\Images\PinMenu.png" />
+    <Resource Include="Themes\Aero\Images\PinMenu_Black.png" />
+    <Resource Include="Themes\Aero\Images\PinMenu_Dark.png" />
+    <Resource Include="Themes\Aero\Images\PinRestore.png" />
+    <Resource Include="Themes\Aero\Images\PinRestore_Black.png" />
+    <Resource Include="Themes\Aero\Images\PinRestore_Dark.png" />
+    <Resource Include="Themes\Aero\Images\VTabGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Blue\Images\DockAnchorableBottom.png" />
+    <Resource Include="Themes\Blue\Images\DockAnchorableLeft.png" />
+    <Resource Include="Themes\Blue\Images\DockAnchorableRight.png" />
+    <Resource Include="Themes\Blue\Images\DockAnchorableTop.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentAsAnchorableBottom.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentAsAnchorableLeft.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentAsAnchorableRight.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentAsAnchorableTop.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentBottom.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentInside.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentLeft.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentRight.png" />
+    <Resource Include="Themes\Blue\Images\DockDocumentTop.png" />
+    <Resource Include="Themes\Blue\Images\DockPaneEmpty.png" />
+    <Resource Include="Themes\Blue\Images\DockPaneLargeEmpty.png" />
+    <Resource Include="Themes\Blue\Images\HTabGroup.png" />
+    <Resource Include="Themes\Blue\Images\Locked.png" />
+    <Resource Include="Themes\Blue\Images\PinAutoHide.png" />
+    <Resource Include="Themes\Blue\Images\PinAutoHide_Black.png" />
+    <Resource Include="Themes\Blue\Images\PinAutoHide_Dark.png" />
+    <Resource Include="Themes\Blue\Images\PinClose.png" />
+    <Resource Include="Themes\Blue\Images\PinClose_Black.png" />
+    <Resource Include="Themes\Blue\Images\PinClose_Dark.png" />
+    <Resource Include="Themes\Blue\Images\PinDocMenu.png" />
+    <Resource Include="Themes\Blue\Images\PinDocMenu_Black.png" />
+    <Resource Include="Themes\Blue\Images\PinMaximize.png" />
+    <Resource Include="Themes\Blue\Images\PinMaximize_Black.png" />
+    <Resource Include="Themes\Blue\Images\PinMaximize_Dark.png" />
+    <Resource Include="Themes\Blue\Images\PinMenu.png" />
+    <Resource Include="Themes\Blue\Images\PinMenu_Black.png" />
+    <Resource Include="Themes\Blue\Images\PinMenu_Dark.png" />
+    <Resource Include="Themes\Blue\Images\PinRestore.png" />
+    <Resource Include="Themes\Blue\Images\PinRestore_Black.png" />
+    <Resource Include="Themes\Blue\Images\PinRestore_Dark.png" />
+    <Resource Include="Themes\Blue\Images\VTabGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\DockAnchorableBottom.png" />
+    <Resource Include="Themes\Generic\Images\DockAnchorableLeft.png" />
+    <Resource Include="Themes\Generic\Images\DockAnchorableRight.png" />
+    <Resource Include="Themes\Generic\Images\DockAnchorableTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\DockDocumentAsAnchorableBottom.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentAsAnchorableLeft.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentAsAnchorableRight.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentAsAnchorableTop.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentBottom.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentInside.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentLeft.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentRight.png" />
+    <Resource Include="Themes\Generic\Images\DockDocumentTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\DockPaneLargeEmpty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinAutoHide_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinAutoHide_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinClose_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinClose_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinDocMenu_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinMaximize_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinMaximize_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinMenu_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinMenu_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinRestore_Black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinRestore_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Generic\Images\PinDocMenu_Dark.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,5 +1,7 @@
-# Build results
+# Build
 bin/
 obj/
 
 .vs
+
+*.exe

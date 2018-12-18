@@ -1,0 +1,105 @@
+﻿<Window x:Class="WpfzDemos.Pages.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfzDemos.Pages"
+        mc:Ignorable="d"
+        xmlns:z="wpfz"
+        ResizeMode="NoResize"
+        Title="管理员注册" Height="450" Width="800">
+
+    <Grid   HorizontalAlignment="Left" Width="790">
+        <Grid.Background>
+            <ImageBrush  ImageSource="/Resources/Pictures/registerBG4.jpg" Opacity="0.7" TileMode="FlipXY" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="20" FontFamily="华文行楷" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
+            管理员注册
+        </TextBlock>
+        <StackPanel Grid.Row="1" Margin="20,0,0.2,0.2">
+            <Border HorizontalAlignment="Center" Width="100" BorderBrush="Black" BorderThickness="1">
+                <Image Name="img_photo" Height="110" Width="96"/>
+            </Border>
+            <z:Buttonz Name="btn_upload" Iconz="{z:F Icon=e027_上传_圆圈上箭头}" Content="上传照片" Width="70" Margin="29 10" Click="btn_upload_Click"  />
+            <TextBlock Name="tb_filename" Text="old" Visibility="Hidden"/>
+        </StackPanel>
+        <Grid Grid.Column="1" Grid.Row="1" >
+
+            <Grid.Resources>
+
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Height" Value="26"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="用户名："     Grid.Row="1" />
+            <Label Content="密码："     Grid.Row="2" />
+            <Label Content="性别："     Grid.Row="3" />
+
+            <Label Content="电话："     Grid.Row="4" />
+            <Label Content="身份证号：" Grid.Row="5" />
+
+
+            <TextBox Name="AccountTextBox"     Grid.Column="1" Grid.Row="1" />
+            <TextBox Name="PasswordTextBox"     Grid.Column="1" Grid.Row="2" />
+
+            <ComboBox Name="sex"     Grid.Column="1" Grid.Row="3" Height="22" Width="50" HorizontalAlignment="Left" SelectedIndex="0">
+                <ComboBoxItem Content="男" TabIndex="0"/>
+                <ComboBoxItem Content="女" TabIndex="1"/>
+            </ComboBox>
+
+            <TextBox Name="telphone" Grid.Column="1" Grid.Row="4" >
+                <TextBox.Text>
+                    <Binding Path="telephone" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBox Name="idcard"   Grid.Column="1" Grid.Row="5" >
+                <TextBox.Text>
+                    <Binding Path="idCard" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+        </Grid>
+        <z:Buttonz Name="btn_add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Row="2" Grid.Column="1" Margin="101,10,0,0" Click="btn_add_Click" >
+            添加
+        </z:Buttonz>
+
+    </Grid>
+</Window>

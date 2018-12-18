@@ -1,0 +1,69 @@
+﻿<Page x:Class="大作业.Pages.PageMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:大作业.Pages"
+      xmlns:z="wpfz"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="600"
+      Title="MenuPage">
+
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+        <Menu Width="Auto" Height="30">
+            <MenuItem Header="系统管理" Icon="{z:F Icon=e019_齿轮}" Margin="1,0,5,0" >
+                <MenuItem Header="设置" Icon="&#xE019;"/>
+                <MenuItem Icon="&#xE019;" Header="插件管理">
+                    <MenuItem Icon="&#xe008;" Header="用户管理" />
+                    <MenuItem Icon="&#xe008;" Header="修改密码" >
+                        <MenuItem Icon="&#xe008;"  Header="用户管理" />
+                        <MenuItem Icon="&#xe008;" Header="修改密码" />
+                        <MenuItem Icon="&#xe008;" Header="在线更新" />
+                    </MenuItem>
+                    <MenuItem Icon="&#xE019;" Header="在线更新" />
+                </MenuItem>
+                <MenuItem Icon="&#xe008;"  Header="用户管理" IsChecked="True" />
+                <MenuItem Icon="&#xe008;" Header="修改密码" />
+                <MenuItem Icon="&#xe008;" Header="在线更新" />
+                <Separator  Style="{StaticResource HorizontalSeparatorStyle}"/>
+                <MenuItem Icon="&#xE019;" Header="问题反馈" />
+                <MenuItem Icon="&#xE019;" Header="技术支持" />
+                <MenuItem Icon="&#xE019;" Header="帮助" />
+                <MenuItem Icon="&#xE019;" Header="关于" />
+            </MenuItem>
+
+            <MenuItem Header="帮助(H)"  InputGestureText="Ctrl+H" Icon="&#xe236;">
+                <MenuItem Header="设置" Icon="&#xe002;"/>
+                <MenuItem Icon="&#xE003;" Header="插件管理" />
+                <MenuItem Icon="&#xe104;"  Header="用户管理" />
+                <MenuItem Icon="&#xe005;" Header="修改密码" />
+                <MenuItem Icon="&#xe006;" Header="在线更新" />
+                <Separator Background="SpringGreen"
+                               Style="{StaticResource HorizontalSeparatorStyle}"/>
+                <MenuItem Icon="&#xe007;" Header="问题反馈" />
+                <MenuItem Icon="&#xe008;" Header="技术支持" />
+                <MenuItem Icon="&#xe009;" Header="帮助" />
+                <MenuItem Icon="&#xe010;" Header="关于" />
+            </MenuItem>
+            <MenuItem Icon="&#xe236;" Header="关于" />
+        </Menu>
+        <Separator Style="{StaticResource VerticalSeparatorStyle}" Margin="10"/>
+        <Menu Width="30" Height="30" Margin="3" Background="Transparent" >
+            <MenuItem Header="" Icon="&#xe236;"
+                          Style="{StaticResource MenuItemTransparentHeaderStyle}"
+                          Padding="0">
+                <MenuItem Header="设置" Icon="&#xE002;"/>
+                <MenuItem Icon="&#xE003;" Header="插件管理" />
+                <MenuItem Icon="&#xe104;"  Header="用户管理" />
+                <MenuItem Icon="&#xe005;" Header="修改密码" />
+                <MenuItem Icon="&#xe006;" Header="在线更新" />
+                <Separator Background="SpringGreen"
+                           Style="{StaticResource HorizontalSeparatorStyle}"/>
+                <MenuItem Icon="&#xe007;" Header="问题反馈" />
+                <MenuItem Icon="&#xe008;" Header="技术支持" />
+                <MenuItem Icon="&#xe009;" Header="帮助" />
+                <MenuItem Icon="&#xe010;" Header="关于" />
+            </MenuItem>
+        </Menu>
+    </StackPanel>
+</Page>

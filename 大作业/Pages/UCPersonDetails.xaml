@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="大作业.UCPersonDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontSize="20" Padding="8" VerticalAlignment="Center"
+                                       Text="检索姓名"/>
+                            <TextBox VerticalAlignment="Center" Width="200"  FontSize="13" Margin="8,0,8,0" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="300" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 职员简略信息 -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" 
+                               FontSize="18"  FontWeight="Bold" 
+                               Margin="6,4"
+                               Text="职员信息"/>
+
+                    <!-- 职员照片 -->
+                    <Border Grid.Row="1" Grid.Column="0" Background="#FFF3F9EC">
+                        <Image Stretch="UniformToFill" Source="{Binding XPath=Photo}"  />
+                    </Border>
+
+                    <!-- 职员详细信息-->
+                    <Grid Grid.Row="1" Grid.Column="1" Margin="4,6">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- 职员姓名 -->
+                        <TextBlock Grid.Row="0" Grid.Column="0" FontWeight="Bold">姓名：</TextBlock>
+                        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                            <TextBlock Text="{Binding XPath=Name}" />
+                        </StackPanel>
+
+                        <!-- 职员办公信息 -->
+                        <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold">办公地址：</TextBlock>
+                        <Grid Grid.Row="1" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <!-- 公司名 -->
+                            <TextBlock Grid.Row="0" Text="{Binding XPath=Office/OfficeName}" />
+                            <!-- 公司地址 -->
+                            <TextBlock Grid.Row="1" Text="{Binding XPath=Office/StreetAddress}" />
+                            <!-- 省、市、邮编 -->
+                            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                <TextBlock Text="{Binding XPath=Office/City}" />
+                                <TextBlock Text=", " />
+                                <TextBlock Text="{Binding XPath=Office/State}" />
+                                <TextBlock Text=" " />
+                                <TextBlock Text="{Binding XPath=Office/ZipCode}" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>

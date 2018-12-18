@@ -1,0 +1,76 @@
+﻿<local:Windowz x:Class="Wpfz.MessageBoxz"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:local="clr-namespace:Wpfz"
+               WindowStartupLocation="CenterOwner"
+               MaxboxEnable="False"
+               MinboxEnable="False"
+               ResizeMode="NoResize"
+               ShowInTaskbar="False"
+               x:Name="mb" 
+               Title="MessageBox"
+               SizeToContent="WidthAndHeight"
+               Style="{StaticResource WindowzDefaultStyle}"
+               Iconz="&#xe123;"
+               CaptionHeight="24">
+    <!--<local:Windowz.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Wpfz;component/Skin/step0/Iconz.xaml"/>
+                <ResourceDictionary Source="/Wpfz;component/Skin/step0/FButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </local:Windowz.Resources>-->
+    <local:Windowz.InputBindings>
+        <KeyBinding Key="Escape" Command="{x:Static SystemCommands.CloseWindowCommand}"/>
+    </local:Windowz.InputBindings>
+    <Grid>
+        <Grid Margin="5,8,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="txtIcon"
+                       HorizontalAlignment="Right"
+                       FontSize="80"
+                       Text="&#xe103;"
+                       Foreground="{Binding Foreground,ElementName=mb}"
+                       Style="{StaticResource IconzStyle}"
+                       Margin="5"/>
+            <TextBlock x:Name="TxtMessage" Grid.Column="1"
+                       Text="新建一个WPF程序在Windows10下面就会出现左边的窗口边框，颜色取决于Windows主题。我想再创建一个右边那样的窗口，要么是窄边，要么没有边。"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="{Binding Foreground,ElementName=mb}" 
+                       FontSize="{Binding FontSize,ElementName=mb}"
+                       TextWrapping="Wrap" 
+                       Margin="5,20,10,20"
+                       MinWidth="260" MaxWidth="420"/>
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Margin="1"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Center">
+                <local:Buttonz x:Name="BtnOK"
+                               Iconz="&#xe013;"
+                               Width="85" Height="30"
+                               CornerRadius="0"
+                               Margin="5,5,20,5"
+                               Click="BtnOK_Click">确定</local:Buttonz>
+                <local:Buttonz x:Name="BtnCancel"
+                               Iconz="&#xe014;"
+                               Width="85" Height="30"
+                               CornerRadius="0"
+                               Margin="20,5,10,5"
+                               Click="BtnCancel_Click">取消</local:Buttonz>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</local:Windowz>

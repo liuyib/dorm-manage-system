@@ -1,0 +1,143 @@
+﻿<Page x:Class="大作业.PageTextBox"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:z="wpfz"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+	Title="Page_TextBox">
+    <Page.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Orientation" Value="Horizontal"/>
+        </Style>
+    </Page.Resources>
+    <ScrollViewer>
+        <StackPanel Style="{x:Null}">
+            <StackPanel Height="100">
+                <RichTextBox Width="380" Margin="3" >
+                    <FlowDocument>
+                        <Paragraph>
+                            <Hyperlink NavigateUri="http://cnblogs.com/rainmj">
+                                <Run Text="网址链接" />
+                            </Hyperlink>
+                            <LineBreak />
+                            <Run>经常看到有人误删数据，或者误操作，特别是Update和Delete的时候没有加WHERE ...然后就喊爹喊娘了，怕是亲爹妈也无奈摇肩。 话说，如果没有犯过错误，那你还算是搞程序的吗？！没了偶尔的心跳，注定一辈子的孤独啊，哈哈哈.... OK.</Run>
+                            <LineBreak />
+                            <Run>经常看到有人误删数据，或者误操作，特别是Update和Delete的时候没有加WHERE ...然后就喊爹喊娘了，怕是亲爹妈也无奈摇肩。 话说，如果没有犯过错误，那你还算是搞程序的吗？！没了偶尔的心跳，注定一辈子的孤独啊，哈哈哈.... OK.</Run>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox Width="180" Margin="3" IsReadOnly="True" >
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run>这是只读的文本信息。</Run>
+                            <LineBreak/>
+                            <Run>This is read only text.</Run>
+                            <LineBreak/>
+                            <Run>经常看到有人误删数据，或者误操作，特别是Update和Delete的时候没有加WHERE ...然后就喊爹喊娘了，怕是亲爹妈也无奈摇肩。 话说，如果没有犯过错误，那你还算是搞程序的吗？！没了偶尔的心跳，注定一辈子的孤独啊，哈哈哈.... OK.</Run>
+                            <LineBreak />
+                            <Run>经常看到有人误删数据，或者误操作，特别是Update和Delete的时候没有加WHERE ...然后就喊爹喊娘了，怕是亲爹妈也无奈摇肩。 话说，如果没有犯过错误，那你还算是搞程序的吗？！没了偶尔的心跳，注定一辈子的孤独啊，哈哈哈.... OK.</Run>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+
+                <RichTextBox Width="180" Margin="3" IsEnabled="False">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run>这是禁用的文本信息。</Run>
+                            <LineBreak/>
+                            <Run>This is my text（IsEnabled=False）.</Run>
+                            <LineBreak/>
+                            <Run>经常看到有人误删数据，或者误操作，特别是Update和Delete的时候没有加WHERE ...然后就喊爹喊娘了，怕是亲爹妈也无奈摇肩。 话说，如果没有犯过错误，那你还算是搞程序的吗？！没了偶尔的心跳，注定一辈子的孤独啊，哈哈哈.... OK.</Run>
+                            <LineBreak />
+                            <Run>经常看到有人误删数据，或者误操作，特别是Update和Delete的时候没有加WHERE ...然后就喊爹喊娘了，怕是亲爹妈也无奈摇肩。 话说，如果没有犯过错误，那你还算是搞程序的吗？！没了偶尔的心跳，注定一辈子的孤独啊，哈哈哈.... OK.</Run>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxDefaultStyle}">
+                        <Setter Property="Width" Value="150"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="Margin" Value="3"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBox z:Attach.Watermark="我是水印"/>
+                <TextBox Height="40" VerticalScrollBarVisibility="Visible">333333333333333</TextBox>
+                <TextBox IsReadOnly="True" z:Attach.CornerRadius="15">我是只读的</TextBox>
+                <TextBox IsEnabled="False">IsEnabled="False"</TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxLabelStyle}">
+                        <Setter Property="Width" Value="200"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="Margin" Value="3"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBox z:Attach.Watermark="请输入姓名" z:Attach.Label="姓名："/>
+                <TextBox z:Attach.Watermark="请输入爱好" z:Attach.Label="爱好："/>
+                <TextBox z:Attach.Watermark="请输入爱好" IsReadOnly="True"
+                         z:Attach.Label="爱好：">IsReadOnly="True"</TextBox>
+                <TextBox z:Attach.Watermark="请输入爱好" IsEnabled="False"
+                         z:Attach.Label="爱好：">IsEnabled="False"</TextBox>
+            </StackPanel>
+
+            <WrapPanel Orientation="Horizontal">
+                <WrapPanel.Resources>
+                    <ControlTemplate x:Key="attachContentTemplate1">
+                        <z:Buttonz Iconz="{z:F Icon=e003_搜索}"
+                                           Style="{StaticResource ButtonzTransparencyStyle}"
+                                           IsTabStop="False" IconzMargin="0"
+                                           IconzSize="18" Margin="1,1,2,3"
+                                           Foreground="{StaticResource TextForeground_Colors}"
+                                           Cursor="Arrow"/>
+                    </ControlTemplate>
+                    <ControlTemplate x:Key="attachContentTemplate2">
+                        <StackPanel Orientation="Horizontal">
+                            <z:Buttonz Iconz="{z:F Icon=e209_信息}"
+                                           Style="{StaticResource ButtonzTransparencyStyle}"
+                                           IsTabStop="False" IconzMargin="0"
+                                           IconzSize="18" Margin="1,1,2,3"
+                                           Foreground="{StaticResource TextForeground_Colors}"
+                                           Cursor="Arrow"/>
+                            <z:Buttonz Iconz="{z:F Icon=e003_搜索}"
+                                           Style="{StaticResource ButtonzTransparencyStyle}"
+                                           IsTabStop="False" IconzMargin="0"
+                                           IconzSize="18" Margin="1,1,2,3"
+                                           Foreground="{StaticResource TextForeground_Colors}"
+                                           Cursor="Arrow"/>
+                        </StackPanel>
+                    </ControlTemplate>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxDefaultStyle}">
+                        <Setter Property="Width" Value="180"/>
+                        <Setter Property="Height" Value="30"/>
+                        <Setter Property="Margin" Value="3"/>
+                    </Style>
+                </WrapPanel.Resources>
+                <TextBox z:Attach.Watermark="输入查询关键词"/>
+                <TextBox z:Attach.Watermark="输入查询关键词" z:Attach.AttachContent="{StaticResource attachContentTemplate1}"/>
+                <TextBox z:Attach.Watermark="输入查询关键词" z:Attach.AttachContent="{StaticResource attachContentTemplate1}"
+                         IsEnabled="False"/>
+                <TextBox z:Attach.Watermark="输入查询关键词" z:Attach.AttachContent="{StaticResource attachContentTemplate2}"/>
+                <TextBox z:Attach.Watermark="输入查询关键词" z:Attach.AttachContent="{StaticResource attachContentTemplate2}"
+                         IsEnabled="False"/>
+            </WrapPanel>
+
+            <StackPanel Orientation="Vertical" Height="200">
+                <PasswordBox Width="200" Password="12345" Margin="3"  />
+                <PasswordBox Width="200" IsEnabled="False" Password="12345" Margin="3"/>
+                <PasswordBox Width="200" Style="{StaticResource PasswordBoxLabelStyle}"
+                         z:Attach.Label="密码：" Margin="3" />
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

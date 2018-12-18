@@ -1,0 +1,29 @@
+﻿<Page x:Class="大作业.Pages.PageWaitingBox"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:大作业.Pages"
+      xmlns:z="wpfz"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="700"
+      Title="PageBusyBox">
+    <StackPanel Style="{x:Null}">
+        <StackPanel Orientation="Horizontal">
+            <z:Buttonz  Name="btnWaitingBox" Margin="20"
+                    Iconz="{z:F Icon=e003_搜索}"
+                    Content="弹出WaitingBox"
+                    Width="120" Height="40"
+                    Background="#FF87E9F3"
+                    MouseOverBackground="#F20BA0"
+                    Click="BtnWaitingBox_Click" />
+            <z:Buttonz Name="BtnWindowz" Margin="20"
+                   Iconz="{z:F Icon=e187_HD视频}"
+                   Width="130" Height="40"
+                   Background="#12B512" IsDefault="True"
+                   MouseOverBackground="#08EE08"
+                   Content="弹出Windowz"
+                   Click="BtnWindowz_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

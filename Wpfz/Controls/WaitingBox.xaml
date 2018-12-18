@@ -1,0 +1,48 @@
+﻿<Window x:Class="Wpfz.WaitingBox" x:Name="wb"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:local="clr-namespace:Wpfz"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Background="Transparent"
+        Title="WaitingBox"
+        Height="110" Width="260">
+    <Grid>
+        <Border Background="{DynamicResource WaitingBoxBackground_Colors}"
+                Opacity="0.89"
+                CornerRadius="1"
+                Effect="{DynamicResource WindowDropShadow_Colors}"/>
+        <StackPanel VerticalAlignment="Center"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="5">
+            <TextBlock Text="&#xe019;" x:Name="MyIcon"
+                       FontSize="50"
+                       Style="{StaticResource IconzStyle}"
+                       RenderTransformOrigin="0.5,0.5" Margin="3">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="TransMyIcon" Angle="0"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="txtMessage"
+                       Margin="2,10,15,10"
+                       Width="160"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap">正在加载......</TextBlock>
+        </StackPanel>
+    </Grid>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard >
+                <Storyboard >
+                    <DoubleAnimation RepeatBehavior="Forever"
+                                     Storyboard.TargetName="TransMyIcon" 
+                                     Storyboard.TargetProperty="Angle"
+                                     To="360"
+                                     Duration="0:0:2.5"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+</Window>
