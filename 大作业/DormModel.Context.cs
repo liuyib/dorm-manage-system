@@ -26,5 +26,11 @@ namespace WpfzDemos
         }
     
         public virtual DbSet<AdminTable> AdminTable { get; set; }
+        public virtual DbSet<ChangeDorm> ChangeDorm { get; set; }
+        public virtual DbSet<DormInfo> DormInfo { get; set; }
+        public virtual DbSet<GuestInfo> GuestInfo { get; set; }
+        public virtual DbSet<Houseparent> Houseparent { get; set; }
+        public virtual DbSet<LeaveInfo> LeaveInfo { get; set; }
+        public virtual DbSet<StudentInfo> StudentInfo { get; set; }
     }
 }

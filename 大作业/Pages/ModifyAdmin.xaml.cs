@@ -35,8 +35,6 @@ namespace WpfzDemos.Pages
 
             var q = from t in c.AdminTable select t;
             dataGrid.ItemsSource = q.ToList();
-
-
         }
 
         private void Buttonz_Click(object sender, RoutedEventArgs e)
