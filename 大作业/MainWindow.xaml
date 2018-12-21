@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:大作业"
         xmlns:z="wpfz"
         mc:Ignorable="d"
-        Icon="/Resources/icoFiles/favicon.ico"
+        Icon="./Resources/icoFiles/favicon.ico"
         Title="大学生宿舍管理系统" Height="450" Width="800" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="QuartzMSFont">
@@ -58,7 +58,7 @@
                                         </StackPanel.Resources>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="用户管理" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="用户管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/AddAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="添加管理"/>
                                                 <z:Buttonz Tag="Pages/ModifyAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="修改管理"/>
@@ -68,7 +68,7 @@
 
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="房间管理" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="房间管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/Time.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间录入"/>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="房间查询"/>
@@ -77,7 +77,7 @@
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="住宿管理" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="住宿管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="住宿情况"/>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁入"/>
@@ -89,7 +89,7 @@
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="财产管理" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="财产管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e02c_工具箱}"  AllowsAnimation="True" Content="维修登记"/>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e028_入库}" AllowsAnimation="True" Content="物品出入登记"/>
@@ -97,7 +97,7 @@
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="违纪管理" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="违纪管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e014_叉号}"  AllowsAnimation="True" Content="违纪登记"/>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="违纪查询"/>
@@ -106,7 +106,7 @@
 
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="数据统计" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="数据统计" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}"  AllowsAnimation="True" Content="房间统计"/>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}" AllowsAnimation="True" Content="人数统计"/>
@@ -115,7 +115,7 @@
 
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
-                                        <GroupBox Header="关于" Foreground="Red" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
+                                        <GroupBox Header="关于" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
                                                 <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e01a_提示}"  AllowsAnimation="True" Content="帮助"/>
                                                 <z:Buttonz Tag="Pages/AboutUs.xaml" Iconz="{z:F Icon=e02b_齿轮}" AllowsAnimation="True" Content="关于我们"/>
@@ -142,27 +142,25 @@
                                     <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition> 
                                 </Grid.ColumnDefinitions>
-                                <Image Source="/Resources/Pictures/Copyright.jpg" Stretch="Fill"/>
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Opacity="0.8">
-                                    <StackPanel.Background>
-                                        <ImageBrush ImageSource="Resources/Pictures/buttonRight.jpg"/>
-                                    </StackPanel.Background>
+                                <DockPanel>
+                                    <Image Source="/Resources/Pictures/Copyright.jpg" Stretch="Uniform" />
+                                    <StackPanel Width="1920" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
+                                        <StackPanel.Background>
+                                            <ImageBrush ImageSource="Resources/Pictures/buttonRight.jpg" Stretch="UniformToFill"/>
+                                        </StackPanel.Background>
 
-                                    <Label FontFamily="songti" FontWeight="Bold" FontSize="20" >
-                                        版权所有：C#第一组
-                                    </Label>
+                                        <Label Padding="10 15 0 0" FontFamily="songti" FontWeight="Bold" FontSize="26" HorizontalContentAlignment="Center">
+                                            版权所有：C#第一组
+                                        </Label>
 
-                                    <Label Padding="10 10 100 0" FontFamily="kaiti" FontWeight="Bold" FontSize="15">
-                                        组员：刘一博 张聪 郭勇 李帅 张淼鑫 郑晨炜 唐振西
-                                    </Label>
-                                </StackPanel>
-                                <TextBlock Name="tBlockTime" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="68" Grid.Row="0" Grid.Column="4" Foreground="Green"/>
+                                        <Label Padding="10 20 0 0" FontFamily="kaiti" FontWeight="Bold" FontSize="14" HorizontalContentAlignment="Center">
+                                            组员：刘一博 张聪 郭勇 李帅 张淼鑫 郑晨炜 唐振西
+                                        </Label>
+                                    </StackPanel>
+                                </DockPanel>
+                                <TextBlock Name="tBlockTime" Padding="0 0 30 0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="40" Grid.Row="0" Grid.Column="4" Foreground="Green"/>
                             </Grid>
                         </z:LayoutAnchorable>
                     </z:LayoutAnchorablePane>
@@ -186,8 +184,7 @@
                                             </LinearGradientBrush>
                                         </TextBlock.Foreground>
                                     本课题要实现的是高校学生宿舍管理系统，在设计该系统时，应尽可能的贴近学生,便于用户操作。系统在实现上应该具有如下功能：
-1.系统要求用户必须输入正确的用户名和密码才能进入系统。\n\r
-                                    
+1.系统要求用户必须输入正确的用户名和密码才能进入系统。
 2.系统应该提供学生住宿情况的基本登记。
 3.系统应提供学生每学期学生的离校处理。
 4.系统应提供人员来访登记及结束访问的详细登记。

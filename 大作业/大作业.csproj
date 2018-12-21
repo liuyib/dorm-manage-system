@@ -79,6 +79,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChangeDorm.cs">
+      <DependentUpon>DormModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DormInfo.cs">
+      <DependentUpon>DormModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuestInfo.cs">
+      <DependentUpon>DormModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Houseparent.cs">
+      <DependentUpon>DormModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveInfo.cs">
+      <DependentUpon>DormModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
@@ -90,6 +105,9 @@
     </Compile>
     <Compile Include="Pages\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentInfo.cs">
+      <DependentUpon>DormModel.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

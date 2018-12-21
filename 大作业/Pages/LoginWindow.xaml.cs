@@ -24,8 +24,7 @@ namespace WpfzDemos.Pages
         public LoginWindow()
         {
             InitializeComponent();
-
-
+            
             string dataDir = AppDomain.CurrentDomain.BaseDirectory;
             if (dataDir.EndsWith(@"\bin\Release\") || dataDir.EndsWith(@"\bin\Debug\"))
             {
@@ -33,9 +32,9 @@ namespace WpfzDemos.Pages
                 AppDomain.CurrentDomain.SetData("DataDirectory", dataDir);
             }
             if (this.DialogResult == false)
-                   {
-                       App.Current.Shutdown();
-                   }
+            {
+                App.Current.Shutdown();
+            }
         }
 
         private void Buttonz_Click(object sender, RoutedEventArgs e)
@@ -49,28 +48,22 @@ namespace WpfzDemos.Pages
             }
 
             var c = new DormEntities();
-
             var query = from t in c.AdminTable where (t.account == account_ & t.password == password_) select t  ;
             
             if (query.Count() > 0)
             {
-
-                
                 MainWindow mainWindow = new MainWindow(account_);
                 
                 this.Close();
                 mainWindow.Show();
-
                 //    c.SubmitChanges();
             }
             else
             {
                 login_fail();
-
             }
 
         }
-
 
         private void fill_fail()
         {
@@ -80,7 +73,6 @@ namespace WpfzDemos.Pages
         private void login_fail()
         {
             MessageBoxz.ShowError("用户名或密码错误！");
-
         }
 
         private void Buttonz_Click_1(object sender, RoutedEventArgs e)

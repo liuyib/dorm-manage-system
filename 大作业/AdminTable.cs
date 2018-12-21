@@ -14,6 +14,12 @@ namespace WpfzDemos
     
     public partial class AdminTable
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AdminTable()
+        {
+            this.Houseparent = new HashSet<Houseparent>();
+        }
+    
         public int Id { get; set; }
         public string account { get; set; }
         public string password { get; set; }
@@ -21,5 +27,8 @@ namespace WpfzDemos
         public string telphone { get; set; }
         public string idCard { get; set; }
         public byte[] photo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Houseparent> Houseparent { get; set; }
     }
 }
