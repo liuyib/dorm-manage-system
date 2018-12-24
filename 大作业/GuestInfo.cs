@@ -18,9 +18,10 @@ namespace WpfzDemos
         public int studentID { get; set; }
         public string name { get; set; }
         public string sex { get; set; }
+        public int IDNumber { get; set; }
         public string studentName { get; set; }
         public int dormNum { get; set; }
-        public string relationship { get; set; }
+        public string reason { get; set; }
         public string visitTime { get; set; }
     
         public virtual StudentInfo StudentInfo { get; set; }

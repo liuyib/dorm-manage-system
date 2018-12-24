@@ -31,7 +31,7 @@ namespace WpfzDemos.Pages
 
         public void showAdmin()
         {
-            var c = new DormEntities();
+            var c = new DormEntities2();
 
             var q = from t in c.AdminTable select t;
             dataGrid.ItemsSource = q.ToList();
@@ -54,7 +54,7 @@ namespace WpfzDemos.Pages
                     return;
                 }
 
-                var c = new DormEntities();
+                var c = new DormEntities2();
                 var query = from t in c.AdminTable where (t.account == account__ && t.password == password__) select t;
 
                 int temp = query.Count();
@@ -80,7 +80,7 @@ namespace WpfzDemos.Pages
             }
           
 
-            //var c = new DormEntities();
+            //var c = new DormEntities2();
             //var q = from t in c.AdminTable select t;
             //int count = q.Count();
             //AdminTable adminTable = new AdminTable

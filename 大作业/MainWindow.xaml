@@ -70,21 +70,19 @@
 
                                         <GroupBox Header="房间管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/Components/Time.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间录入"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="房间查询"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间修改"/>
+                                                <z:Buttonz Tag="Pages/RoomManage/AddRoom.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间录入"/>
+                                                <z:Buttonz Tag="Pages/RoomManage/QueryRoom.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="房间查询"/>
+                                                <z:Buttonz Tag="Pages/RoomManage/ChangeRoom.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间修改"/>
                                             </StackPanel>
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
                                         <GroupBox Header="住宿管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="住宿情况"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁入"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁出"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="调换房间"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="来访登记"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="人员查询"/>
+                                                <z:Buttonz Tag="Pages/StayManage/InStay.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="学生信息"/>
+                                                <z:Buttonz Tag="Pages/StayManage/ChangeStay.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="调换房间"/>
+                                                <z:Buttonz Tag="Pages/StayManage/VisitorRegister.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="来访登记"/>
+                                                <z:Buttonz Tag="Pages/StayManage/QueryPeople.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="人员查询"/>
                                             </StackPanel>
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>

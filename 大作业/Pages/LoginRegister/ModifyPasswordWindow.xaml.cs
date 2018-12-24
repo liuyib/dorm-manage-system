@@ -32,7 +32,7 @@ namespace WpfzDemos.Pages
         public void modify_show(string name)
         {
            // MessageBox.Show(name);
-            var c = new DormEntities();
+            var c = new DormEntities2();
             var q = from t in c.AdminTable where (t.account == name) select t;
             string idCard =this.IdCardBox.Text ;
             string password_ = PasswordBox.Password;

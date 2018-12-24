@@ -32,8 +32,7 @@ namespace WpfzDemos.Pages
 
         public void showAdmin()
         {
-            var c = new DormEntities();
-
+            var c = new DormEntities2();
             var q = from t in c.AdminTable select t;
             dataGrid.ItemsSource = q.ToList();
 
@@ -47,25 +46,27 @@ namespace WpfzDemos.Pages
         {
             string account_ = AccountTextBox.Text;
             string password_ = PasswordTextBox.Text;
-            if(account_=="" || account_==null || password_=="" || password_==null)
+            if (account_ == "" || account_ == null || password_ == "" || password_ == null)
             {
                 add_fail();
                 return;
             }
-          //  SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DormEntities"].ConnectionString.ToString());
-            var c = new DormEntities();
+
+            var c = new DormEntities2();
             var q = from t in c.AdminTable select t;
             int count = q.Count();
             AdminTable adminTable = new AdminTable
             {
-                Id = count + 1, account=account_, password=password_
-          
+                Id = count + 1,
+                account = account_,
+                password = password_
+
             };
-            
+
 
             c.AdminTable.Add(adminTable);
             c.SaveChanges();
-          
+
             showAdmin();
             add_ok();
         }

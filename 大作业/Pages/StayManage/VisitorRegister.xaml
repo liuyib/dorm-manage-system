@@ -5,10 +5,51 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfzDemos.Pages.StayManage"
       mc:Ignorable="d" 
+      xmlns:z="wpfz"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="VisitorRegister">
 
     <Grid>
-        
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">来访信息登记</Label>
+            <DataGrid Name="dataGrid" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="操作" Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox ></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="ID" Width="Auto" Binding="{Binding Id , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学生姓名" Width="Auto" Binding="{Binding studentName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学生宿舍号" Width="Auto" Binding="{Binding dormNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="来访人姓名" Width="Auto" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="来访人性别" Width="Auto" Binding="{Binding sex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="来访人证件号" Width="Auto" Binding="{Binding IDNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="来访原因" Width="Auto" Binding="{Binding reason, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="来访时间" Width="Auto" Binding="{Binding visitTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Rectangle Fill="AntiqueWhite" Height="3" Margin="0 20"></Rectangle>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">输入来访信息</Label>
+            <StackPanel>
+                <TextBox Name="stuName" HorizontalAlignment="Center" Width="350" z:Attach.Watermark="请输入学生姓名" z:Attach.Label="请输入学生姓名：" Margin="0 5"/>
+                <TextBox Name="stuDormNum"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入学生宿舍号" z:Attach.Label="请输入学生宿舍号：" Margin="0 5"/>
+                <TextBox Name="oName"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入来访人姓名" z:Attach.Label="请输入来访人姓名：" Margin="0 5"/>
+                <TextBox Name="oSex"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入来访人性别" z:Attach.Label="请输入来访人性别：" Margin="0 5"/>
+                <TextBox Name="oID"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入来访人证件号" z:Attach.Label="请输入来访人证件号：" Margin="0 5"/>
+                <TextBox Name="oReason"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入来访原因" z:Attach.Label="请输入来访原因：" Margin="0 5"/>
+                <TextBox Name="oVisitTime"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入来访时间" z:Attach.Label="请输入来访时间：" Margin="0 5"/>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30">
+                    <z:Buttonz Width="100" Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e013_对号}" Margin="20 0" Click="Buttonz_Click">确定</z:Buttonz>
+                    <z:Buttonz Width="100"  Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e014_叉号}" Margin="20 0" Click="Buttonz_Click_1">取消</z:Buttonz>
+                </WrapPanel>
+            </StackPanel>
+
+        </StackPanel>
     </Grid>
 </Page>

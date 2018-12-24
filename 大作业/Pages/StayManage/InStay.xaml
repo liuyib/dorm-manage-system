@@ -6,9 +6,56 @@
       xmlns:local="clr-namespace:WpfzDemos.Pages.StayManage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:z="wpfz"
       Title="InStay">
 
     <Grid>
-        
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">学生信息录入</Label>
+            <DataGrid Name="dataGrid" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="操作" Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox ></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                    <DataGridTextColumn Header="ID" Width="100" Binding="{Binding Id , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="姓名" Width="100" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="性别" Width="100" Binding="{Binding sex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学号" Width="100" Binding="{Binding studentNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="院系" Width="100" Binding="{Binding department, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="专业" Width="100" Binding="{Binding profession, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="手机号" Width="100" Binding="{Binding phoneNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="楼号" Width="100" Binding="{Binding buildingNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="宿舍号" Width="100" Binding="{Binding dormNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="入住时间" Width="100" Binding="{Binding boardTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学年制" Width="100" Binding="{Binding schoolYearSystem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Rectangle Fill="AntiqueWhite" Height="3" Margin="0 20"></Rectangle>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">输入学生信息</Label>
+            <StackPanel>
+                <TextBox Name="stuName" HorizontalAlignment="Center" Width="350" z:Attach.Watermark="请输入姓名" z:Attach.Label="姓名：" Margin="0 5"/>
+                <TextBox Name="stuSex"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入性别" z:Attach.Label="性别：" Margin="0 5"/>
+                <TextBox Name="stuID"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入学号" z:Attach.Label="学号：" Margin="0 5"/>
+                <TextBox Name="stuDepart"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入院系" z:Attach.Label="院系：" Margin="0 5"/>
+                <TextBox Name="stuProfession"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入专业" z:Attach.Label="专业：" Margin="0 5"/>
+                <TextBox Name="stuPhone"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入手机号" z:Attach.Label="手机号：" Margin="0 5"/>
+                <TextBox Name="stuBuildingNum"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入楼号" z:Attach.Label="楼号：" Margin="0 5"/>
+                <TextBox Name="stuDormNum"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入宿舍号" z:Attach.Label="宿舍号：" Margin="0 5"/>
+                <TextBox Name="stuTime"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入入宿时间" z:Attach.Label="入宿时间：" Margin="0 5"/>
+                <TextBox Name="stuYear"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入学年制" z:Attach.Label="学年制：" Margin="0 5"/>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30">
+                    <z:Buttonz Width="100" Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e013_对号}" Margin="20 0" Click="Buttonz_Click">确定</z:Buttonz>
+                    <z:Buttonz Width="100"  Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e014_叉号}" Margin="20 0" Click="Buttonz_Click_1">取消</z:Buttonz>
+                </WrapPanel>
+            </StackPanel>
+
+        </StackPanel>
     </Grid>
 </Page>

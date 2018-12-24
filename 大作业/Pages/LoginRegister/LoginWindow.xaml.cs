@@ -47,7 +47,7 @@ namespace WpfzDemos.Pages
                 return;
             }
 
-            var c = new DormEntities();
+            var c = new DormEntities2();
             var query = from t in c.AdminTable where (t.account == account_ & t.password == password_) select t  ;
             
             if (query.Count() > 0)
@@ -56,7 +56,6 @@ namespace WpfzDemos.Pages
                 
                 this.Close();
                 mainWindow.Show();
-                //    c.SubmitChanges();
             }
             else
             {
@@ -96,10 +95,6 @@ namespace WpfzDemos.Pages
 
             //if (query.Count() > 0)
             //{
-
-
-
-
             //    MessageBoxz.ShowInfo("该用户名已经被注册");
             //}
             //else
@@ -113,20 +108,10 @@ namespace WpfzDemos.Pages
             //        Id = count + 1,
             //        account = account_,
             //        password = password_
-
             //    };
-
-               
             //    c.AdminTable.Add(adminTable);
             //    c.SaveChanges();
-
-
             //    MessageBoxz.ShowInfo("恭喜您，注册新用户成功");
-
-
-
-
-               
             //}
         }
     }

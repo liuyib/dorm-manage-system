@@ -5,10 +5,73 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfzDemos.Pages.RoomManage"
       mc:Ignorable="d" 
+      xmlns:z="wpfz"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ChangeRoom">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="3" Grid.Row="1">
+
+            <z:Buttonz Margin="3" x:Name="BtnModify">房间修改</z:Buttonz>
+        </StackPanel>
+
+        <DataGrid Grid.Row="0" AutoGenerateColumns="False" Background="#FFDDFBF9"  Name="gridList"  CanUserAddRows="False" CanUserDeleteRows="False">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="楼号" Binding="{Binding buildingNum}" Width="Auto" />
+                <DataGridTextColumn Header="宿舍号" Binding="{Binding dormNum}" Width="Auto" />
+                <DataGridTextColumn Header="总床位" Binding="{Binding bedNum}" Width="Auto" />
+                <DataGridTextColumn Header="已住人数" Binding="{Binding boardNum}" Width="Auto" />
+                <DataGridTextColumn Header="住宿费用" Binding="{Binding boardMoney}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border Name="border" Grid.Row="2" HorizontalAlignment="Center">
+            <Grid HorizontalAlignment="Center" Width="800">
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="Margin" Value="0 10"/>
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                        </Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="Margin" Value="5 10"/>
+                        </Style>
+                    </Grid.Resources>
+
+                    <Label   Grid.Row="0" Grid.Column="0" Content="总床位：" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Name="t1" 
+                             Text="" />
+
+                    <Label   Grid.Row="0" Grid.Column="2" Content="已住人数：" />
+                    <TextBox Grid.Row="0" Grid.Column="3" Name="t2"
+                             Text="" />
+                    
+                    <Label   Grid.Row="0" Grid.Column="4" Content="住宿费用：" />
+                    <TextBox Grid.Row="0" Grid.Column="5" Name="t3"
+                             Text="" />
+
+                    <TextBox Grid.Row="1" Grid.Column="3" Name="t4" Text="" Width="0" Height="0" />
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

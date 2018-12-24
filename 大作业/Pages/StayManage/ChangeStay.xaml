@@ -5,10 +5,74 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfzDemos.Pages.StayManage"
       mc:Ignorable="d" 
+      xmlns:z="wpfz"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ChangeStay">
 
     <Grid>
-        
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">调换宿舍</Label>
+            <DataGrid Name="dataGrid" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="操作" Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox ></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="ID" Width="100" Binding="{Binding Id , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="姓名" Width="100" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学号" Width="100" Binding="{Binding studentNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学院" Width="100" Binding="{Binding department, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="楼号" Width="100" Binding="{Binding buildingNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="宿舍号" Width="100" Binding="{Binding dormNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Rectangle Fill="AntiqueWhite" Height="3" Margin="0 20"></Rectangle>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">输入宿舍号</Label>
+
+            <DockPanel HorizontalAlignment="Center">
+                <StackPanel Width="Auto">
+                    <TextBox Name="oldNumTextBox" HorizontalAlignment="Center" Width="150" z:Attach.Watermark="请输入原宿舍号" z:Attach.Label="原宿舍号：" Margin="10 20"/>
+                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30">
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Width="Auto">
+                    <TextBox Name="newNumTextBox" HorizontalAlignment="Center" Width="150" z:Attach.Watermark="请输入新宿舍号" z:Attach.Label="新宿舍号：" Margin="10 20"/>
+                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30">
+                    </WrapPanel>
+                </StackPanel>
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Center">
+                <Grid HorizontalAlignment="Center" Width="800">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="Label">
+                                <Setter Property="Margin" Value="0 10"/>
+                                <Setter Property="HorizontalAlignment" Value="Right"/>
+                            </Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Margin" Value="5 10"/>
+                            </Style>
+                        </Grid.Resources>
+                        <z:Buttonz Grid.Row="0" Grid.Column="1" Width="100" Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e013_对号}" Click="Buttonz_Click">查询</z:Buttonz>
+                        <z:Buttonz Grid.Row="0" Grid.Column="2" Width="100"  Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e014_叉号}" Click="Buttonz_Click_1">确定</z:Buttonz>
+                    </Grid>
+                </Grid>
+                
+            </DockPanel>
+
+        </StackPanel>
     </Grid>
 </Page>

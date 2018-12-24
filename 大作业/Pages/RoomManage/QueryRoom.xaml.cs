@@ -23,6 +23,71 @@ namespace WpfzDemos.Pages.RoomManage
         public QueryRoom()
         {
             InitializeComponent();
+            Loaded += delegate
+            {
+                using (var q = new DormEntities2())
+                {
+
+                    var t = from z in q.studentInfo select z;
+                    gridList.ItemsSource = t.ToList();
+
+                };
+            };
+            btnBind.Click += delegate
+            {
+                using (var q = new DormEntities2())
+                {
+
+
+                    var t = from z in q.studentInfo
+                            where z.buildingNum.ToString() == txtNumber1.Text &&
+                            z.dormNum.ToString() == txtNumber2.Text
+                            select z;
+                    gridList1.ItemsSource = t.ToList();
+
+                    if (t.Count() == 0)
+                    {
+                        MessageBox.Show("请确认楼号房间号是否正确！");
+                    }
+
+                };
+            };
+            btnBind1.Click += delegate
+            {
+                using (var q = new DormEntities2())
+                {
+
+
+                    var t = from z in q.studentInfo
+                            where z.buildingNum.ToString() == txtNumber1.Text
+                            select z;
+                    gridList1.ItemsSource = t.ToList();
+
+                    if (t.Count() == 0)
+                    {
+                        MessageBox.Show("请确认楼号房间号是否正确！");
+                    }
+
+                };
+            };
+            btnBind2.Click += delegate
+            {
+                using (var q = new DormEntities2())
+                {
+
+
+                    var t = from z in q.studentInfo
+                            where z.boardNum < 4
+                            select z;
+                    gridList1.ItemsSource = t.ToList();
+
+                    if (t.Count() == 0)
+                    {
+                        MessageBox.Show("Error:Please Input Correct Data! 请确认楼号房间号是否正确！");
+                    }
+
+                };
+            };
         }
     }
 }

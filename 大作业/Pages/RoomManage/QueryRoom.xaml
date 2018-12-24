@@ -5,10 +5,52 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfzDemos.Pages.RoomManage"
       mc:Ignorable="d" 
+      xmlns:z="wpfz"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="QueryRoom">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="3">
+            <TextBox Width="100" Height="30" Margin="3" x:Name="txtNumber1"
+                     z:Attach.Watermark="请输人" 
+                     Style="{StaticResource TextBoxLabelStyle}"
+                     z:Attach.Label="楼号："></TextBox>
+            <TextBox Width="120" Height="30" Margin="3" x:Name="txtNumber2"
+                     z:Attach.Watermark="请输人" 
+                     Style="{StaticResource TextBoxLabelStyle}"
+                     z:Attach.Label="房间号："></TextBox>
+            <z:Buttonz Margin="3" x:Name="btnBind">房间查询</z:Buttonz>
+            <z:Buttonz Margin="3" x:Name="btnBind1">楼号查询</z:Buttonz>
+            <z:Buttonz Margin="3" x:Name="btnBind2">未满员寝室查询</z:Buttonz>
+        </StackPanel>
+
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" Background="#FFDDFBF9"  Name="gridList"  CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="楼号" Binding="{Binding buildingNum}" Width="Auto" />
+                <DataGridTextColumn Header="宿舍号" Binding="{Binding dormNum}" Width="Auto" />
+                <DataGridTextColumn Header="总床位" Binding="{Binding bedNum}" Width="Auto" />
+                <DataGridTextColumn Header="已住人数" Binding="{Binding boardNum}" Width="Auto" />
+                <DataGridTextColumn Header="住宿费用" Binding="{Binding boardMoney}" Width="Auto" />
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False" Background="#FFDDFBF9"  Name="gridList1"  CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="楼号" Binding="{Binding buildingNum}" Width="Auto" />
+                <DataGridTextColumn Header="宿舍号" Binding="{Binding dormNum}" Width="Auto" />
+                <DataGridTextColumn Header="总床位" Binding="{Binding bedNum}" Width="Auto" />
+                <DataGridTextColumn Header="已住人数" Binding="{Binding boardNum}" Width="Auto" />
+                <DataGridTextColumn Header="住宿费用" Binding="{Binding boardMoney}" Width="Auto" />
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

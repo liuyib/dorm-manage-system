@@ -15,13 +15,10 @@ namespace WpfzDemos
     public partial class DormInfo
     {
         public int Id { get; set; }
-        public int studentID { get; set; }
-        public int dormNum { get; set; }
         public int buildingNum { get; set; }
-        public string dormMasterName { get; set; }
+        public int dormNum { get; set; }
         public int bedNum { get; set; }
         public int boardNum { get; set; }
-    
-        public virtual StudentInfo StudentInfo { get; set; }
+        public Nullable<int> boardMoney { get; set; }
     }
 }
