@@ -55,7 +55,7 @@ namespace WpfzDemos.Pages
                 return;
             }
 
-            var c = new DormEntities2();
+            var c = new Model1Container();
 
             var query = from t in c.AdminTable where (t.account == account_ & t.password == password_) select t;
 

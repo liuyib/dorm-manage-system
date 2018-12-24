@@ -26,9 +26,9 @@ namespace WpfzDemos.Pages.RoomManage
             InitializeComponent();
             Loaded += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
-                    var t = from z in q.studentInfo select z;
+                    var t = from z in q.DormInfo select z;
                     gridList.ItemsSource = t.ToList();
                 };
 
@@ -36,9 +36,9 @@ namespace WpfzDemos.Pages.RoomManage
             
             BtnAdd.Click += (s, e) =>
             {
-                using (var c = new DormEntities2())
+                using (var c = new Model1Container())
                 {
-                    var q = from t in c.studentInfo select t;
+                    var q = from t in c.DormInfo select t;
                     int count = q.Count();
                     DormInfo dromInfo = new DormInfo
                     {
@@ -51,9 +51,9 @@ namespace WpfzDemos.Pages.RoomManage
                     };
                     try
                     {
-                        c.studentInfo.Add(dromInfo);
+                        c.DormInfo.Add(dromInfo);
                         c.SaveChanges();
-                        var t = from z in c.studentInfo select z;
+                        var t = from z in c.DormInfo select z;
                         gridList.ItemsSource = t.ToList();
                     }
                     catch (Exception ex)

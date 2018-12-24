@@ -28,7 +28,7 @@ namespace WpfzDemos.Pages.StayManage
 
         public void showAdmin()
         {
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = from t in c.GuestInfo select t;
             dataGrid.ItemsSource = q.ToList();
         }
@@ -43,7 +43,7 @@ namespace WpfzDemos.Pages.StayManage
             string _oReason = oReason.Text;
             string _oVisitTime = oVisitTime.Text;
 
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = from t in c.GuestInfo select t;
             int count = q.Count();
             GuestInfo guestInfo = new GuestInfo

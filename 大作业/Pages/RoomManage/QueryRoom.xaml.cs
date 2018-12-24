@@ -25,21 +25,21 @@ namespace WpfzDemos.Pages.RoomManage
             InitializeComponent();
             Loaded += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
-                    var t = from z in q.studentInfo select z;
+                    var t = from z in q.DormInfo select z;
                     gridList.ItemsSource = t.ToList();
 
                 };
             };
             btnBind.Click += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
 
-                    var t = from z in q.studentInfo
+                    var t = from z in q.DormInfo
                             where z.buildingNum.ToString() == txtNumber1.Text &&
                             z.dormNum.ToString() == txtNumber2.Text
                             select z;
@@ -54,11 +54,11 @@ namespace WpfzDemos.Pages.RoomManage
             };
             btnBind1.Click += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
 
-                    var t = from z in q.studentInfo
+                    var t = from z in q.DormInfo
                             where z.buildingNum.ToString() == txtNumber1.Text
                             select z;
                     gridList1.ItemsSource = t.ToList();
@@ -72,12 +72,12 @@ namespace WpfzDemos.Pages.RoomManage
             };
             btnBind2.Click += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
 
-                    var t = from z in q.studentInfo
-                            where z.boardNum < 4
+                    var t = from z in q.DormInfo
+                            where z.dormNum < 4
                             select z;
                     gridList1.ItemsSource = t.ToList();
 

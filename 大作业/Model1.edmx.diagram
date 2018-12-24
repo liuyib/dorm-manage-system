@@ -4,16 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1e0bb7f1a0ea47e4aa72a4c5990461a2" Name="Diagram1">
-        <EntityTypeShape EntityType="DormModel.AdminTable" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DormModel.ChangeDorm" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DormModel.DormInfo" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DormModel.GuestInfo" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DormModel.LeaveInfo" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DormModel.StudentInfo" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
-        <AssociationConnector Association="DormModel.FK_ChangeDorm_To_StudentInfo" ManuallyRouted="false" />
-        <AssociationConnector Association="DormModel.FK_GuestInfo_To_StudentInfo" ManuallyRouted="false" />
-        <AssociationConnector Association="DormModel.FK_LeaveInfo_To_StudentInfo" ManuallyRouted="false" />
+      <Diagram DiagramId="e0d027fa0b5641b59cb974ff5fcdbfc2" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.AdminTable" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.ChangeDorm" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="Model1.DormInfo" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model1.GuestInfo" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model1.LeaveInfo" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="Model1.OutInInfo" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model1.RepairInfo" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model1.StudentInfo" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="Model1.ViolateInfo" Width="1.5" PointX="2.75" PointY="8.75" />
+        <AssociationConnector Association="Model1.FK_ChangeDorm_To_StudentInfo" />
+        <AssociationConnector Association="Model1.FK_LeaveInfo_To_StudentInfo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

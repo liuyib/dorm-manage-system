@@ -32,7 +32,7 @@ namespace WpfzDemos.Pages
 
         public void showAdmin()
         {
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = from t in c.AdminTable select t;
             dataGrid.ItemsSource = q.ToList();
 
@@ -52,7 +52,7 @@ namespace WpfzDemos.Pages
                 return;
             }
 
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = from t in c.AdminTable select t;
             int count = q.Count();
             AdminTable adminTable = new AdminTable

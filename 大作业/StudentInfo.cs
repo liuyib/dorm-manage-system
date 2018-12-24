@@ -18,7 +18,6 @@ namespace WpfzDemos
         public StudentInfo()
         {
             this.ChangeDorm = new HashSet<ChangeDorm>();
-            this.GuestInfo = new HashSet<GuestInfo>();
             this.LeaveInfo = new HashSet<LeaveInfo>();
         }
     
@@ -36,8 +35,6 @@ namespace WpfzDemos
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChangeDorm> ChangeDorm { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GuestInfo> GuestInfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LeaveInfo> LeaveInfo { get; set; }
     }

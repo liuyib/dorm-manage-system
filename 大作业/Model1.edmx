@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DormModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdminTable">
           <Key>
             <PropertyRef Name="Id" />
@@ -67,6 +67,34 @@
           <Property Name="leaveReason" Type="text" />
           <Property Name="whereAbout" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="OutInInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="studentID" Type="int" Nullable="false" />
+          <Property Name="partment" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="profession" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="buildingNum" Type="int" Nullable="false" />
+          <Property Name="dormNum" Type="int" Nullable="false" />
+          <Property Name="thing" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RepairInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="studentID" Type="int" Nullable="false" />
+          <Property Name="partment" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="profession" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="buildingNum" Type="int" Nullable="false" />
+          <Property Name="dormNum" Type="int" Nullable="false" />
+          <Property Name="reason" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="StudentInfo">
           <Key>
             <PropertyRef Name="Id" />
@@ -83,6 +111,20 @@
           <Property Name="boardTime" Type="nvarchar" MaxLength="50" />
           <Property Name="schoolYearSystem" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ViolateInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="studentID" Type="int" Nullable="false" />
+          <Property Name="partment" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="profession" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="buildingNum" Type="int" Nullable="false" />
+          <Property Name="dormNum" Type="int" Nullable="false" />
+          <Property Name="reason" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_ChangeDorm_To_StudentInfo">
           <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="1" />
           <End Role="ChangeDorm" Type="Self.ChangeDorm" Multiplicity="*" />
@@ -91,18 +133,6 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="ChangeDorm">
-              <PropertyRef Name="studentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_GuestInfo_To_StudentInfo">
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="1" />
-          <End Role="GuestInfo" Type="Self.GuestInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentInfo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GuestInfo">
               <PropertyRef Name="studentID" />
             </Dependent>
           </ReferentialConstraint>
@@ -119,38 +149,55 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DormModelStoreContainer">
+        <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="AdminTable" EntityType="Self.AdminTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChangeDorm" EntityType="Self.ChangeDorm" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DormInfo" EntityType="Self.DormInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GuestInfo" EntityType="Self.GuestInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LeaveInfo" EntityType="Self.LeaveInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutInInfo" EntityType="Self.OutInInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairInfo" EntityType="Self.RepairInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentInfo" EntityType="Self.StudentInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViolateInfo" EntityType="Self.ViolateInfo" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ChangeDorm_To_StudentInfo" Association="Self.FK_ChangeDorm_To_StudentInfo">
             <End Role="StudentInfo" EntitySet="StudentInfo" />
             <End Role="ChangeDorm" EntitySet="ChangeDorm" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GuestInfo_To_StudentInfo" Association="Self.FK_GuestInfo_To_StudentInfo">
-            <End Role="StudentInfo" EntitySet="StudentInfo" />
-            <End Role="GuestInfo" EntitySet="GuestInfo" />
           </AssociationSet>
           <AssociationSet Name="FK_LeaveInfo_To_StudentInfo" Association="Self.FK_LeaveInfo_To_StudentInfo">
             <End Role="StudentInfo" EntitySet="StudentInfo" />
             <End Role="LeaveInfo" EntitySet="LeaveInfo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DormModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminTable" EntityType="Model1.AdminTable" />
+          <EntitySet Name="ChangeDorm" EntityType="Model1.ChangeDorm" />
+          <EntitySet Name="DormInfo" EntityType="Model1.DormInfo" />
+          <EntitySet Name="GuestInfo" EntityType="Model1.GuestInfo" />
+          <EntitySet Name="LeaveInfo" EntityType="Model1.LeaveInfo" />
+          <EntitySet Name="OutInInfo" EntityType="Model1.OutInInfo" />
+          <EntitySet Name="RepairInfo" EntityType="Model1.RepairInfo" />
+          <EntitySet Name="StudentInfo" EntityType="Model1.StudentInfo" />
+          <EntitySet Name="ViolateInfo" EntityType="Model1.ViolateInfo" />
+          <AssociationSet Name="FK_ChangeDorm_To_StudentInfo" Association="Model1.FK_ChangeDorm_To_StudentInfo">
+            <End Role="StudentInfo" EntitySet="StudentInfo" />
+            <End Role="ChangeDorm" EntitySet="ChangeDorm" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LeaveInfo_To_StudentInfo" Association="Model1.FK_LeaveInfo_To_StudentInfo">
+            <End Role="StudentInfo" EntitySet="StudentInfo" />
+            <End Role="LeaveInfo" EntitySet="LeaveInfo" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="AdminTable">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="account" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="telphone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
           <Property Name="idCard" Type="String" MaxLength="18" FixedLength="true" Unicode="true" />
@@ -162,13 +209,13 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="studentID" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="oldDorm" Type="Int32" Nullable="false" />
           <Property Name="newDorm" Type="Int32" Nullable="false" />
           <Property Name="changeTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="changeReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="StudentInfo" Relationship="Self.FK_ChangeDorm_To_StudentInfo" FromRole="ChangeDorm" ToRole="StudentInfo" />
+          <NavigationProperty Name="StudentInfo" Relationship="Model1.FK_ChangeDorm_To_StudentInfo" FromRole="ChangeDorm" ToRole="StudentInfo" />
         </EntityType>
         <EntityType Name="DormInfo">
           <Key>
@@ -187,14 +234,13 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="studentID" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IDNumber" Type="Int32" Nullable="false" />
-          <Property Name="studentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="studentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="dormNum" Type="Int32" Nullable="false" />
           <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="visitTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="StudentInfo" Relationship="Self.FK_GuestInfo_To_StudentInfo" FromRole="GuestInfo" ToRole="StudentInfo" />
+          <Property Name="visitTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LeaveInfo">
           <Key>
@@ -202,19 +248,47 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="studentID" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="leaveTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="leaveReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="whereAbout" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="StudentInfo" Relationship="Self.FK_LeaveInfo_To_StudentInfo" FromRole="LeaveInfo" ToRole="StudentInfo" />
+          <NavigationProperty Name="StudentInfo" Relationship="Model1.FK_LeaveInfo_To_StudentInfo" FromRole="LeaveInfo" ToRole="StudentInfo" />
+        </EntityType>
+        <EntityType Name="OutInInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="studentID" Type="Int32" Nullable="false" />
+          <Property Name="partment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="profession" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="buildingNum" Type="Int32" Nullable="false" />
+          <Property Name="dormNum" Type="Int32" Nullable="false" />
+          <Property Name="thing" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RepairInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="studentID" Type="Int32" Nullable="false" />
+          <Property Name="partment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="profession" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="buildingNum" Type="Int32" Nullable="false" />
+          <Property Name="dormNum" Type="Int32" Nullable="false" />
+          <Property Name="reason" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="StudentInfo">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="studentNum" Type="Int32" Nullable="false" />
           <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -224,13 +298,26 @@
           <Property Name="dormNum" Type="Int32" Nullable="false" />
           <Property Name="boardTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="schoolYearSystem" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChangeDorm" Relationship="Self.FK_ChangeDorm_To_StudentInfo" FromRole="StudentInfo" ToRole="ChangeDorm" />
-          <NavigationProperty Name="GuestInfo" Relationship="Self.FK_GuestInfo_To_StudentInfo" FromRole="StudentInfo" ToRole="GuestInfo" />
-          <NavigationProperty Name="LeaveInfo" Relationship="Self.FK_LeaveInfo_To_StudentInfo" FromRole="StudentInfo" ToRole="LeaveInfo" />
+          <NavigationProperty Name="ChangeDorm" Relationship="Model1.FK_ChangeDorm_To_StudentInfo" FromRole="StudentInfo" ToRole="ChangeDorm" />
+          <NavigationProperty Name="LeaveInfo" Relationship="Model1.FK_LeaveInfo_To_StudentInfo" FromRole="StudentInfo" ToRole="LeaveInfo" />
+        </EntityType>
+        <EntityType Name="ViolateInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="studentID" Type="Int32" Nullable="false" />
+          <Property Name="partment" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="profession" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="buildingNum" Type="Int32" Nullable="false" />
+          <Property Name="dormNum" Type="Int32" Nullable="false" />
+          <Property Name="reason" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_ChangeDorm_To_StudentInfo">
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="1" />
-          <End Role="ChangeDorm" Type="Self.ChangeDorm" Multiplicity="*" />
+          <End Type="Model1.StudentInfo" Role="StudentInfo" Multiplicity="1" />
+          <End Type="Model1.ChangeDorm" Role="ChangeDorm" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StudentInfo">
               <PropertyRef Name="Id" />
@@ -240,21 +327,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GuestInfo_To_StudentInfo">
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="1" />
-          <End Role="GuestInfo" Type="Self.GuestInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="StudentInfo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GuestInfo">
-              <PropertyRef Name="studentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_LeaveInfo_To_StudentInfo">
-          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="1" />
-          <End Role="LeaveInfo" Type="Self.LeaveInfo" Multiplicity="*" />
+          <End Type="Model1.StudentInfo" Role="StudentInfo" Multiplicity="1" />
+          <End Type="Model1.LeaveInfo" Role="LeaveInfo" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StudentInfo">
               <PropertyRef Name="Id" />
@@ -264,113 +339,140 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DormEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AdminTable" EntityType="Self.AdminTable" />
-          <EntitySet Name="ChangeDorm" EntityType="Self.ChangeDorm" />
-          <EntitySet Name="DormInfo" EntityType="Self.DormInfo" />
-          <EntitySet Name="GuestInfo" EntityType="Self.GuestInfo" />
-          <EntitySet Name="LeaveInfo" EntityType="Self.LeaveInfo" />
-          <EntitySet Name="StudentInfo" EntityType="Self.StudentInfo" />
-          <AssociationSet Name="FK_ChangeDorm_To_StudentInfo" Association="Self.FK_ChangeDorm_To_StudentInfo">
-            <End Role="StudentInfo" EntitySet="StudentInfo" />
-            <End Role="ChangeDorm" EntitySet="ChangeDorm" />
-          </AssociationSet>
-          <AssociationSet Name="FK_GuestInfo_To_StudentInfo" Association="Self.FK_GuestInfo_To_StudentInfo">
-            <End Role="StudentInfo" EntitySet="StudentInfo" />
-            <End Role="GuestInfo" EntitySet="GuestInfo" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LeaveInfo_To_StudentInfo" Association="Self.FK_LeaveInfo_To_StudentInfo">
-            <End Role="StudentInfo" EntitySet="StudentInfo" />
-            <End Role="LeaveInfo" EntitySet="LeaveInfo" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DormModelStoreContainer" CdmEntityContainer="DormEntities2">
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
           <EntitySetMapping Name="AdminTable">
-            <EntityTypeMapping TypeName="DormModel.AdminTable">
+            <EntityTypeMapping TypeName="Model1.AdminTable">
               <MappingFragment StoreEntitySet="AdminTable">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="account" ColumnName="account" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="telphone" ColumnName="telphone" />
-                <ScalarProperty Name="idCard" ColumnName="idCard" />
                 <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="idCard" ColumnName="idCard" />
+                <ScalarProperty Name="telphone" ColumnName="telphone" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="account" ColumnName="account" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChangeDorm">
-            <EntityTypeMapping TypeName="DormModel.ChangeDorm">
+            <EntityTypeMapping TypeName="Model1.ChangeDorm">
               <MappingFragment StoreEntitySet="ChangeDorm">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="studentID" ColumnName="studentID" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="oldDorm" ColumnName="oldDorm" />
-                <ScalarProperty Name="newDorm" ColumnName="newDorm" />
-                <ScalarProperty Name="changeTime" ColumnName="changeTime" />
                 <ScalarProperty Name="changeReason" ColumnName="changeReason" />
+                <ScalarProperty Name="changeTime" ColumnName="changeTime" />
+                <ScalarProperty Name="newDorm" ColumnName="newDorm" />
+                <ScalarProperty Name="oldDorm" ColumnName="oldDorm" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DormInfo">
-            <EntityTypeMapping TypeName="DormModel.DormInfo">
+            <EntityTypeMapping TypeName="Model1.DormInfo">
               <MappingFragment StoreEntitySet="DormInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
-                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
-                <ScalarProperty Name="bedNum" ColumnName="bedNum" />
-                <ScalarProperty Name="boardNum" ColumnName="boardNum" />
                 <ScalarProperty Name="boardMoney" ColumnName="boardMoney" />
+                <ScalarProperty Name="boardNum" ColumnName="boardNum" />
+                <ScalarProperty Name="bedNum" ColumnName="bedNum" />
+                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
+                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GuestInfo">
-            <EntityTypeMapping TypeName="DormModel.GuestInfo">
+            <EntityTypeMapping TypeName="Model1.GuestInfo">
               <MappingFragment StoreEntitySet="GuestInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="studentID" ColumnName="studentID" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
-                <ScalarProperty Name="studentName" ColumnName="studentName" />
-                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
-                <ScalarProperty Name="reason" ColumnName="reason" />
                 <ScalarProperty Name="visitTime" ColumnName="visitTime" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
+                <ScalarProperty Name="studentName" ColumnName="studentName" />
+                <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LeaveInfo">
-            <EntityTypeMapping TypeName="DormModel.LeaveInfo">
+            <EntityTypeMapping TypeName="Model1.LeaveInfo">
               <MappingFragment StoreEntitySet="LeaveInfo">
+                <ScalarProperty Name="whereAbout" ColumnName="whereAbout" />
+                <ScalarProperty Name="leaveReason" ColumnName="leaveReason" />
+                <ScalarProperty Name="leaveTime" ColumnName="leaveTime" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutInInfo">
+            <EntityTypeMapping TypeName="Model1.OutInInfo">
+              <MappingFragment StoreEntitySet="OutInInfo">
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="thing" ColumnName="thing" />
+                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
+                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="partment" ColumnName="partment" />
                 <ScalarProperty Name="studentID" ColumnName="studentID" />
                 <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="leaveTime" ColumnName="leaveTime" />
-                <ScalarProperty Name="leaveReason" ColumnName="leaveReason" />
-                <ScalarProperty Name="whereAbout" ColumnName="whereAbout" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairInfo">
+            <EntityTypeMapping TypeName="Model1.RepairInfo">
+              <MappingFragment StoreEntitySet="RepairInfo">
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
+                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="partment" ColumnName="partment" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StudentInfo">
-            <EntityTypeMapping TypeName="DormModel.StudentInfo">
+            <EntityTypeMapping TypeName="Model1.StudentInfo">
               <MappingFragment StoreEntitySet="StudentInfo">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="studentNum" ColumnName="studentNum" />
-                <ScalarProperty Name="department" ColumnName="department" />
-                <ScalarProperty Name="profession" ColumnName="profession" />
-                <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
-                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
-                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
-                <ScalarProperty Name="boardTime" ColumnName="boardTime" />
                 <ScalarProperty Name="schoolYearSystem" ColumnName="schoolYearSystem" />
+                <ScalarProperty Name="boardTime" ColumnName="boardTime" />
+                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
+                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
+                <ScalarProperty Name="phoneNum" ColumnName="phoneNum" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="studentNum" ColumnName="studentNum" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViolateInfo">
+            <EntityTypeMapping TypeName="Model1.ViolateInfo">
+              <MappingFragment StoreEntitySet="ViolateInfo">
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="dormNum" ColumnName="dormNum" />
+                <ScalarProperty Name="buildingNum" ColumnName="buildingNum" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="partment" ColumnName="partment" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -379,22 +481,23 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
-    <Connection>
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
-    </Connection>
-    <Options>
+    </edmx:Connection>
+    <edmx:Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
-    </Options>
+    </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
-  </Designer>
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
 </edmx:Edmx>

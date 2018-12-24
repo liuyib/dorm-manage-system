@@ -29,7 +29,7 @@ namespace WpfzDemos.Pages.StayManage
 
         public void showAdmin()
         {
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = from t in c.StudentInfo select t;
             dataGrid.ItemsSource = q.ToList();
         }
@@ -47,10 +47,10 @@ namespace WpfzDemos.Pages.StayManage
             string _stuTime = stuTime.Text;
             int _stuYear = int.Parse(stuYear.Text);
 
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = from t in c.StudentInfo select t;
             int count = q.Count();
-            StudentInfo studentInfo = new StudentInfo
+            StudentInfo StudentInfo = new StudentInfo
             {
                 Id = count + 1,
                 name = _stuName,
@@ -66,7 +66,7 @@ namespace WpfzDemos.Pages.StayManage
             };
 
 
-            c.StudentInfo.Add(studentInfo);
+            c.StudentInfo.Add(StudentInfo);
             c.SaveChanges();
 
             showAdmin();

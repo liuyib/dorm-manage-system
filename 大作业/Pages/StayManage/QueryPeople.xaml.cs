@@ -25,7 +25,7 @@ namespace WpfzDemos.Pages.StayManage
             InitializeComponent();
             Loaded += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
                     var t = from z in q.StudentInfo select z;
@@ -36,7 +36,7 @@ namespace WpfzDemos.Pages.StayManage
             // 姓名查询
             btnBind.Click += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
 
@@ -57,7 +57,7 @@ namespace WpfzDemos.Pages.StayManage
             // 学号查询
             btnBind1.Click += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
 
@@ -78,7 +78,7 @@ namespace WpfzDemos.Pages.StayManage
             // 宿舍号
             btnBind2.Click += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
                     var t = from z in q.StudentInfo
                             where z.dormNum.ToString() == txtNumber3.Text

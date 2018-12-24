@@ -28,7 +28,7 @@ namespace WpfzDemos.Pages
         }
         public void showAdmin()
         {
-            var c = new DormEntities2();
+            var c = new Model1Container();
 
             var q = from t in c.AdminTable select t;
             dataGrid.ItemsSource = q.ToList();
@@ -45,7 +45,7 @@ namespace WpfzDemos.Pages
         {
 
             string account_ = accountBox.Text;
-            var c = new DormEntities2();
+            var c = new Model1Container();
             var q = (from t in c.AdminTable where t.account == account_ select t).First<AdminTable>() ;
           c.AdminTable.Remove(q);
             c.SaveChanges();

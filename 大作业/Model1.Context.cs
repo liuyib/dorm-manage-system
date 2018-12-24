@@ -13,10 +13,10 @@ namespace WpfzDemos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DormEntities2 : DbContext
+    public partial class Model1Container : DbContext
     {
-        public DormEntities2()
-            : base("name=DormEntities2")
+        public Model1Container()
+            : base("name=Model1Container")
         {
         }
     
@@ -27,9 +27,12 @@ namespace WpfzDemos
     
         public virtual DbSet<AdminTable> AdminTable { get; set; }
         public virtual DbSet<ChangeDorm> ChangeDorm { get; set; }
-        public virtual DbSet<DormInfo> studentInfo { get; set; }
+        public virtual DbSet<DormInfo> DormInfo { get; set; }
         public virtual DbSet<GuestInfo> GuestInfo { get; set; }
         public virtual DbSet<LeaveInfo> LeaveInfo { get; set; }
+        public virtual DbSet<OutInInfo> OutInInfo { get; set; }
+        public virtual DbSet<RepairInfo> RepairInfo { get; set; }
         public virtual DbSet<StudentInfo> StudentInfo { get; set; }
+        public virtual DbSet<ViolateInfo> ViolateInfo { get; set; }
     }
 }

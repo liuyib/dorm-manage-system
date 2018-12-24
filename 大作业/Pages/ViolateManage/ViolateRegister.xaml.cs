@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpfz;
 
 namespace WpfzDemos.Pages.ViolateManage
 {
@@ -23,6 +24,65 @@ namespace WpfzDemos.Pages.ViolateManage
         public ViolateRegister()
         {
             InitializeComponent();
+        }
+
+        public void showAdmin()
+        {
+            var c = new Model1Container();
+            var q = from t in c.ViolateInfo select t;
+            dataGrid.ItemsSource = q.ToList();
+        }
+
+        private void Buttonz_Click(object sender, RoutedEventArgs e)
+        {
+            string _stuName = stuName.Text;
+            int _stuID = int.Parse(stuID.Text);
+            string _stuDepart = stuDepart.Text;
+            string _stuProfession = stuProfession.Text;
+            int _stuBuildingNum = int.Parse(stuBuildingNum.Text);
+            int _stuDormNum = int.Parse(stuDormNum.Text);
+            string _repairReason = repairReason.Text;
+            string _repairTime = repairTime.Text;
+
+            var c = new Model1Container();
+            var q = from t in c.ViolateInfo select t;
+            int count = q.Count();
+            ViolateInfo violateInfo = new ViolateInfo
+            {
+                Id = count + 1,
+                name = _stuName,
+                studentID = _stuID,
+                partment = _stuDepart,
+                profession = _stuProfession,
+                buildingNum = _stuBuildingNum,
+                dormNum = _stuDormNum,
+                reason = _repairReason,
+                time = _repairTime
+            };
+
+
+            c.ViolateInfo.Add(violateInfo);
+            c.SaveChanges();
+
+            showAdmin();
+            add_ok();
+        }
+
+        private void Buttonz_Click_1(object sender, RoutedEventArgs e)
+        {
+            stuName.Text = "";
+            stuID.Text = "";
+            stuDepart.Text = "";
+            stuProfession.Text = "";
+            stuBuildingNum.Text = "";
+            stuDormNum.Text = "";
+            repairReason.Text = "";
+            repairTime.Text = "";
+        }
+
+        private void add_ok()
+        {
+            MessageBoxz.ShowInfo("违纪记录添加成功");
         }
     }
 }

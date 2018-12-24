@@ -25,19 +25,19 @@ namespace WpfzDemos.Pages.RoomManage
             InitializeComponent();
             Loaded += delegate
             {
-                using (var q = new DormEntities2())
+                using (var q = new Model1Container())
                 {
 
-                    var t = from z in q.studentInfo select z;
+                    var t = from z in q.DormInfo select z;
                     gridList.ItemsSource = t.ToList();
 
                 };
                 BtnModify.Click += (s, e) =>
                 {
-                    using (var c = new DormEntities2())
+                    using (var c = new Model1Container())
                     {
                         int dormNum1 = Convert.ToInt32(t4.Text);
-                        var linq1 = from z1 in c.studentInfo where (z1.dormNum == dormNum1) select z1;
+                        var linq1 = from z1 in c.DormInfo where (z1.dormNum == dormNum1) select z1;
 
                         foreach(var item in linq1)
                         {
@@ -47,7 +47,7 @@ namespace WpfzDemos.Pages.RoomManage
                         }
 
                         c.SaveChanges();
-                        var t = from z in c.studentInfo select z;
+                        var t = from z in c.DormInfo select z;
                         gridList.ItemsSource = t.ToList();
                     }
                 };

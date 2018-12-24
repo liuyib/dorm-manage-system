@@ -89,25 +89,16 @@
 
                                         <GroupBox Header="财产管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e02c_工具箱}"  AllowsAnimation="True" Content="维修登记"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e028_入库}" AllowsAnimation="True" Content="物品出入登记"/>
+                                                <z:Buttonz Tag="Pages/PropertyManage/RepairRegister.xaml" Iconz="{z:F Icon=e02c_工具箱}"  AllowsAnimation="True" Content="维修登记"/>
+                                                <z:Buttonz Tag="Pages/PropertyManage/OutInRegister.xaml" Iconz="{z:F Icon=e028_入库}" AllowsAnimation="True" Content="物品出入登记"/>
                                             </StackPanel>
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
                                         <GroupBox Header="违纪管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e014_叉号}"  AllowsAnimation="True" Content="违纪登记"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="违纪查询"/>
-                                            </StackPanel>
-                                        </GroupBox>
-
-                                        <Rectangle Height="2" Fill="Green"></Rectangle>
-
-                                        <GroupBox Header="数据统计" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
-                                            <StackPanel>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}"  AllowsAnimation="True" Content="房间统计"/>
-                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}" AllowsAnimation="True" Content="人数统计"/>
+                                                <z:Buttonz Tag="Pages/ViolateManage/ViolateRegister.xaml" Iconz="{z:F Icon=e014_叉号}"  AllowsAnimation="True" Content="违纪登记"/>
+                                                <!--<z:Buttonz Tag="Pages/ViolateManage/QueryViolate.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="违纪查询"/>-->
                                             </StackPanel>
                                         </GroupBox>
 

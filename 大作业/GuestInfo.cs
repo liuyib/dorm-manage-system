@@ -23,7 +23,5 @@ namespace WpfzDemos
         public int dormNum { get; set; }
         public string reason { get; set; }
         public string visitTime { get; set; }
-    
-        public virtual StudentInfo StudentInfo { get; set; }
     }
 }

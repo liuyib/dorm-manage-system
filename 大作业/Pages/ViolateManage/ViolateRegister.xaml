@@ -5,10 +5,53 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfzDemos.Pages.ViolateManage"
       mc:Ignorable="d" 
+      xmlns:z="wpfz"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ViolateRegister">
 
     <Grid>
-        
+        <StackPanel>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">违纪信息登记</Label>
+            <DataGrid Name="dataGrid" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="操作" Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox ></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="ID" Width="Auto" Binding="{Binding Id , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="姓名" Width="Auto" Binding="{Binding name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学号" Width="Auto" Binding="{Binding studentID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="学院" Width="Auto" Binding="{Binding partment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="专业" Width="Auto" Binding="{Binding profession, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="楼号" Width="Auto" Binding="{Binding buildingNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="宿舍号" Width="Auto" Binding="{Binding dormNum, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="违纪原因" Width="Auto" Binding="{Binding reason, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="违纪时间" Width="Auto" Binding="{Binding time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Rectangle Fill="AntiqueWhite" Height="3" Margin="0 20"></Rectangle>
+            <Label HorizontalAlignment="Center" Foreground="Green" FontFamily="kaiti" FontSize="45" FontWeight="Bold">输入违纪信息</Label>
+            <StackPanel>
+                <TextBox Name="stuName" HorizontalAlignment="Center" Width="350" z:Attach.Watermark="请输入姓名" z:Attach.Label="姓名：" Margin="0 5"/>
+                <TextBox Name="stuID"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入学号" z:Attach.Label="学号：" Margin="0 5"/>
+                <TextBox Name="stuDepart"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入学院" z:Attach.Label="学院：" Margin="0 5"/>
+                <TextBox Name="stuProfession"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入专业" z:Attach.Label="专业：" Margin="0 5"/>
+                <TextBox Name="stuBuildingNum"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入楼号" z:Attach.Label="楼号：" Margin="0 5"/>
+                <TextBox Name="stuDormNum"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入宿舍号" z:Attach.Label="宿舍号：" Margin="0 5"/>
+                <TextBox Name="repairReason"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入违纪原因" z:Attach.Label="违纪原因：" Margin="0 5"/>
+                <TextBox Name="repairTime"  HorizontalAlignment="Center" Width="350"  z:Attach.Watermark="请输入违纪时间" z:Attach.Label="违纪时间：" Margin="0 5"/>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 30">
+                    <z:Buttonz Width="100" Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e013_对号}" Margin="20 0" Click="Buttonz_Click">确定</z:Buttonz>
+                    <z:Buttonz Width="100"  Style="{StaticResource ButtonzDefaultStyle}" Iconz="{z:F Icon=e014_叉号}" Margin="20 0" Click="Buttonz_Click_1">取消</z:Buttonz>
+                </WrapPanel>
+            </StackPanel>
+
+        </StackPanel>
     </Grid>
 </Page>

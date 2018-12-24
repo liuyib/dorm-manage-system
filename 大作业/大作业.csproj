@@ -109,14 +109,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="OutInInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\About\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DataStatistics\PeopleStatistics.xaml.cs">
-      <DependentUpon>PeopleStatistics.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DataStatistics\RoomStatistics.xaml.cs">
-      <DependentUpon>RoomStatistics.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\About\HelpPage.xaml.cs">
       <DependentUpon>HelpPage.xaml</DependentUpon>
@@ -160,7 +157,13 @@
     <Compile Include="Pages\ViolateManage\ViolateRegister.xaml.cs">
       <DependentUpon>ViolateRegister.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RepairInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="StudentInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViolateInfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -180,14 +183,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UserManage\AddAdmin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DataStatistics\PeopleStatistics.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DataStatistics\RoomStatistics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -358,13 +353,13 @@
     </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Resource Include="Resources\Pictures\modifyPassword.jpg" />
     <Resource Include="Resources\Pictures\registerBG3.jpg" />
