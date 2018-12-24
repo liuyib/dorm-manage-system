@@ -60,9 +60,9 @@
 
                                         <GroupBox Header="用户管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/AddAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="添加管理"/>
-                                                <z:Buttonz Tag="Pages/ModifyAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="修改管理"/>
-                                                <z:Buttonz Tag="Pages/DeleteAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="删除管理"/>
+                                                <z:Buttonz Tag="Pages/UserManage/AddAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="添加管理"/>
+                                                <z:Buttonz Tag="Pages/UserManage/ModifyAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="修改管理"/>
+                                                <z:Buttonz Tag="Pages/UserManage/DeleteAdmin.xaml" Iconz="{z:F Icon=e008_用户}" AllowsAnimation="True" Content="删除管理"/>
                                             </StackPanel>
                                         </GroupBox>
 
@@ -70,37 +70,37 @@
 
                                         <GroupBox Header="房间管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/Time.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间录入"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="房间查询"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间修改"/>
+                                                <z:Buttonz Tag="Pages/Components/Time.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间录入"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="房间查询"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e080_钥匙}" AllowsAnimation="True" Content="房间修改"/>
                                             </StackPanel>
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
                                         <GroupBox Header="住宿管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="住宿情况"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁入"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁出"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="调换房间"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="来访登记"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="人员查询"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="住宿情况"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁入"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="办理迁出"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="调换房间"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e012_列表}" AllowsAnimation="True" Content="来访登记"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="人员查询"/>
                                             </StackPanel>
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
                                         <GroupBox Header="财产管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e02c_工具箱}"  AllowsAnimation="True" Content="维修登记"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e028_入库}" AllowsAnimation="True" Content="物品出入登记"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e02c_工具箱}"  AllowsAnimation="True" Content="维修登记"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e028_入库}" AllowsAnimation="True" Content="物品出入登记"/>
                                             </StackPanel>
                                         </GroupBox>
                                         <Rectangle Height="2" Fill="Green"></Rectangle>
 
                                         <GroupBox Header="违纪管理" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e014_叉号}"  AllowsAnimation="True" Content="违纪登记"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="违纪查询"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e014_叉号}"  AllowsAnimation="True" Content="违纪登记"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e003_搜索}" AllowsAnimation="True" Content="违纪查询"/>
                                             </StackPanel>
                                         </GroupBox>
 
@@ -108,8 +108,8 @@
 
                                         <GroupBox Header="数据统计" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}"  AllowsAnimation="True" Content="房间统计"/>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}" AllowsAnimation="True" Content="人数统计"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}"  AllowsAnimation="True" Content="房间统计"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e032_列表}" AllowsAnimation="True" Content="人数统计"/>
                                             </StackPanel>
                                         </GroupBox>
 
@@ -117,8 +117,8 @@
 
                                         <GroupBox Header="关于" FontFamily="kaiti" FontSize="22" FontWeight="Bold">
                                             <StackPanel>
-                                                <z:Buttonz Tag="Pages/HelpPage.xaml" Iconz="{z:F Icon=e01a_提示}"  AllowsAnimation="True" Content="帮助"/>
-                                                <z:Buttonz Tag="Pages/AboutUs.xaml" Iconz="{z:F Icon=e02b_齿轮}" AllowsAnimation="True" Content="关于我们"/>
+                                                <z:Buttonz Tag="Pages/About/HelpPage.xaml" Iconz="{z:F Icon=e01a_提示}"  AllowsAnimation="True" Content="帮助"/>
+                                                <z:Buttonz Tag="Pages/About/AboutUs.xaml" Iconz="{z:F Icon=e02b_齿轮}" AllowsAnimation="True" Content="关于我们"/>
                                             </StackPanel>
                                         </GroupBox>
 
@@ -131,7 +131,7 @@
                             <z:LayoutDocument x:Name="bodyLayout" Title="bodyLayout" CanClose="False">
                                 <Frame Name="frame1"
                                    Background="{StaticResource BaseColor18}"
-                                   NavigationUIVisibility="Hidden" Source="Pages/DefaultPage.xaml" />
+                                   NavigationUIVisibility="Hidden" Source="Pages/Components/DefaultPage.xaml" />
                             </z:LayoutDocument>
                         </z:LayoutDocumentPane>
                     </z:LayoutPanel>

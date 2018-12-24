@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ba2ee6e27b3349abbd291dba143039f5" Name="Diagram1" ZoomLevel="64">
+      <Diagram DiagramId="ba2ee6e27b3349abbd291dba143039f5" Name="Diagram1" ZoomLevel="79">
         <EntityTypeShape EntityType="DormModel.AdminTable" Width="1.5" PointX="5.875" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="DormModel.ChangeDorm" Width="1.5" PointX="8.375" PointY="13.5" />
         <EntityTypeShape EntityType="DormModel.DormInfo" Width="1.5" PointX="8.375" PointY="9.5" />

@@ -94,17 +94,62 @@
     <Compile Include="LeaveInfo.cs">
       <DependentUpon>DormModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AboutUs.xaml.cs">
+    <Compile Include="Pages\About\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\HelpPage.xaml.cs">
+    <Compile Include="Pages\DataStatistics\PeopleStatistics.xaml.cs">
+      <DependentUpon>PeopleStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DataStatistics\RoomStatistics.xaml.cs">
+      <DependentUpon>RoomStatistics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\About\HelpPage.xaml.cs">
       <DependentUpon>HelpPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ModifyPasswordWindow.xaml.cs">
+    <Compile Include="Pages\LoginRegister\ModifyPasswordWindow.xaml.cs">
       <DependentUpon>ModifyPasswordWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RegisterWindow.xaml.cs">
+    <Compile Include="Pages\PropertyManage\OutInRegister.xaml.cs">
+      <DependentUpon>OutInRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PropertyManage\RepairRegister.xaml.cs">
+      <DependentUpon>RepairRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginRegister\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomManage\AddRoom.xaml.cs">
+      <DependentUpon>AddRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomManage\ChangeRoom.xaml.cs">
+      <DependentUpon>ChangeRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RoomManage\QueryRoom.xaml.cs">
+      <DependentUpon>QueryRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StayManage\AboutStay.xaml.cs">
+      <DependentUpon>AboutStay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StayManage\ChangeStay.xaml.cs">
+      <DependentUpon>ChangeStay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StayManage\InStay.xaml.cs">
+      <DependentUpon>InStay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StayManage\OutStay.xaml.cs">
+      <DependentUpon>OutStay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StayManage\QueryPeople.xaml.cs">
+      <DependentUpon>QueryPeople.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StayManage\VisitorRegister.xaml.cs">
+      <DependentUpon>VisitorRegister.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViolateManage\QueryViolate.xaml.cs">
+      <DependentUpon>QueryViolate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViolateManage\ViolateRegister.xaml.cs">
+      <DependentUpon>ViolateRegister.xaml</DependentUpon>
     </Compile>
     <Compile Include="StudentInfo.cs">
       <DependentUpon>DormModel.tt</DependentUpon>
@@ -143,71 +188,124 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\AboutUs.xaml">
+    <Page Include="Pages\About\AboutUs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AddAdmin.xaml">
+    <Page Include="Pages\UserManage\AddAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AddAdmin2.xaml">
+    <Page Include="Pages\DataStatistics\PeopleStatistics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DefaultPage.xaml">
+    <Page Include="Pages\DataStatistics\RoomStatistics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DeleteAdmin.xaml">
+    <Page Include="Pages\Components\DefaultPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\HelpPage.xaml">
+    <Page Include="Pages\UserManage\DeleteAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LoginWindow.xaml">
+    <Page Include="Pages\About\HelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ModifyAdmin.xaml">
+    <Page Include="Pages\LoginRegister\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ModifyPasswordWindow.xaml">
+    <Page Include="Pages\UserManage\ModifyAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RegisterWindow.xaml">
+    <Page Include="Pages\LoginRegister\ModifyPasswordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Time.xaml">
+    <Page Include="Pages\PropertyManage\OutInRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PropertyManage\RepairRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginRegister\RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RoomManage\AddRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RoomManage\ChangeRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RoomManage\QueryRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StayManage\AboutStay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StayManage\ChangeStay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StayManage\InStay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StayManage\OutStay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StayManage\QueryPeople.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StayManage\VisitorRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Components\Time.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViolateManage\QueryViolate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViolateManage\ViolateRegister.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\AddAdmin.xaml.cs">
+    <Compile Include="Pages\UserManage\AddAdmin.xaml.cs">
       <DependentUpon>AddAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AddAdmin2.xaml.cs">
-      <DependentUpon>AddAdmin2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DefaultPage.xaml.cs">
+    <Compile Include="Pages\Components\DefaultPage.xaml.cs">
       <DependentUpon>DefaultPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DeleteAdmin.xaml.cs">
+    <Compile Include="Pages\UserManage\DeleteAdmin.xaml.cs">
       <DependentUpon>DeleteAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\LoginWindow.xaml.cs">
+    <Compile Include="Pages\LoginRegister\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ModifyAdmin.xaml.cs">
+    <Compile Include="Pages\UserManage\ModifyAdmin.xaml.cs">
       <DependentUpon>ModifyAdmin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Time.xaml.cs">
+    <Compile Include="Pages\Components\Time.xaml.cs">
       <DependentUpon>Time.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -273,13 +371,6 @@
     <Resource Include="Resources\icoFiles\favicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Admin_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Admin.mdf</DependentUpon>
-    </Content>
     <Content Include="Dorm.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
